@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 
-class LifecycleActivity : AppCompatActivity() {
+class LifecycleActivity : AppCompatActivity(), LifecycleFragment.OnFragmentInteractionListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

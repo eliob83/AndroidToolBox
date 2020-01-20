@@ -3,10 +3,11 @@ package fr.isen.bilisari.androidtoolbox
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,6 +34,8 @@ class LifecycleFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        Log.d("-- FRAGMENT", "CREATE")
     }
 
     override fun onCreateView(
@@ -45,7 +48,7 @@ class LifecycleFragment : Fragment() {
 
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
-        listener?.onFragmentInteraction(uri)
+        //listener?.onFragmentInteraction(uri)
     }
 
     override fun onAttach(context: Context) {
@@ -55,11 +58,29 @@ class LifecycleFragment : Fragment() {
         } else {
             throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
         }
+        Log.d("-- FRAGMENT", "ATTACH")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("-- FRAGMENT", "DESTROY")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("-- FRAGMENT", "PAUSE")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("-- FRAGMENT", "RESUME")
     }
 
     override fun onDetach() {
         super.onDetach()
         listener = null
+
+        Log.d("-- FRAGMENT", "DETACH")
     }
 
     /**
@@ -75,7 +96,7 @@ class LifecycleFragment : Fragment() {
      */
     interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        fun onFragmentInteraction(uri: Uri)
+        //fun onFragmentInteraction(uri: Uri)
     }
 
     companion object {

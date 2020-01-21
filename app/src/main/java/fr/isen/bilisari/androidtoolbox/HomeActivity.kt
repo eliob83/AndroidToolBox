@@ -6,8 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
+    private var prefs : Prefs? = null;
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        prefs = Prefs(this)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
@@ -27,5 +30,10 @@ class HomeActivity : AppCompatActivity() {
 
         }
 
+        btnLogout.setOnClickListener {
+            prefs!!.removeCredentials()
+            finish()
+            startActivity(Intent(this@HomeActivity, LoginActivity::class.java))
+        }
     }
 }

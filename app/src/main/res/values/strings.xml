@@ -5,6 +5,7 @@
     <string name="login_username">Identifiant</string>
     <string name="login_password">Mot de passe</string>
     <string name="action_login_validate">Valider</string>
+    <string name="action_login_register">S'inscrire</string>
     <string name="login_fail">Mauvais couple identifiant/mot de passe</string>
 
     <string name="home_title">Bonjour</string>
@@ -12,6 +13,7 @@
     <string name="home_backup">Sauvegarde</string>
     <string name="home_permissions">Permissions</string>
     <string name="home_webservices">Webservices</string>
+    <string name="action_home_logout">Déconnexion</string>
 
     <string name="action_lifecycle_switch">Zé dibar !</string>
 

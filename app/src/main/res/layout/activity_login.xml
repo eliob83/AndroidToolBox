@@ -29,6 +29,42 @@
         app:layout_constraintTop_toBottomOf="@+id/inputLayoutPassword"
         app:layout_constraintVertical_bias="0.3" />
 
+    <Button
+        android:id="@+id/btnRegister"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:background="#d4010f"
+        android:enabled="true"
+        android:text="@string/action_login_register"
+        android:textColor="@android:color/white"
+        android:textColorLink="#E458FC"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin2"
+        app:layout_constraintVertical_bias="0.815" />
+
+    <Button
+        android:id="@+id/btnLogin2"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:background="#d4010f"
+        android:enabled="true"
+        android:text="@string/action_login_validate"
+        android:textColor="@android:color/white"
+        android:textColorLink="#E458FC"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutPassword"
+        app:layout_constraintVertical_bias="0.3" />
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="196dp"

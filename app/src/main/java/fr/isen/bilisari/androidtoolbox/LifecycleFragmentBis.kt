@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.activity_lifecycle.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,6 +24,11 @@ class LifecycleFragmentBis : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    fun cycle(state: String) {
+        Log.d("++FRAGMENT", state)
+        textState?.text = state
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -30,7 +36,7 @@ class LifecycleFragmentBis : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
 
-        Log.d("++FRAGMENT", "CREATE")
+        cycle("CREATE")
     }
 
     override fun onCreateView(
@@ -38,23 +44,23 @@ class LifecycleFragmentBis : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lifecycle_fragment_bis, container, false)
+        return inflater.inflate(R.layout.fragment_lifecycle_bis, container, false)
     }
 
 
     override fun onPause() {
         super.onPause()
-        Log.d("++FRAGMENT", "PAUSE")
+        cycle("PAUSE")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d("++FRAGMENT", "RESUME")
+        cycle("RESUME")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("++FRAGMENT", "DESTROY")
+        cycle("DESTROY")
     }
 
 

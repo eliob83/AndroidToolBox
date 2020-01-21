@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.activity_lifecycle.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,6 +29,11 @@ class LifecycleFragment : Fragment() {
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
 
+    fun cycle(state: String) {
+        Log.d("--FRAGMENT", state)
+        textState?.text = state
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -35,7 +41,7 @@ class LifecycleFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
 
-        Log.d("-- FRAGMENT", "CREATE")
+        cycle("CREATE")
     }
 
     override fun onCreateView(
@@ -58,29 +64,29 @@ class LifecycleFragment : Fragment() {
         } else {
             throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
         }
-        Log.d("-- FRAGMENT", "ATTACH")
+        cycle("ATTACH")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("-- FRAGMENT", "DESTROY")
+        cycle("DESTROY")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d("-- FRAGMENT", "PAUSE")
+        cycle("PAUSE")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d("-- FRAGMENT", "RESUME")
+        cycle("RESUME")
     }
 
     override fun onDetach() {
         super.onDetach()
         listener = null
 
-        Log.d("-- FRAGMENT", "DETACH")
+        cycle("DETACH")
     }
 
     /**

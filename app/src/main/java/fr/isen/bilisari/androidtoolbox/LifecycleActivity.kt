@@ -7,15 +7,20 @@ import kotlinx.android.synthetic.main.activity_lifecycle.*
 
 
 class LifecycleActivity : AppCompatActivity(), LifecycleFragment.OnFragmentInteractionListener {
+    fun cycle(state: String) {
+        Log.d("LIFECYCLE", state)
+        textState.text = state
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lifecycle)
+        //supportFragmentManager.beginTransaction().hide(fragment).commit()
+
 
         val fragment = LifecycleFragment()
         val fragmentBis = LifecycleFragmentBis()
         supportFragmentManager.beginTransaction().add(R.id.layoutFragment, fragment).commit()
-        //supportFragmentManager.beginTransaction().hide(fragment).commit()
-
         btnSwitch.setOnClickListener {
             Log.d("LIFECYCLE", "alternate")
 
@@ -42,22 +47,22 @@ class LifecycleActivity : AppCompatActivity(), LifecycleFragment.OnFragmentInter
             }*/
         }
 
-        Log.d("LIFECYCLE", "CREATE de l'activité")
+        cycle("CREATE")
     }
 
 
     override fun onPause() {
         super.onPause()
-        Log.d("LIFECYCLE", "PAUSE de l'activité")
+        cycle("PAUSE")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("LIFECYCLE", "DESTROY de l'activité")
+        cycle("DESTROY")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d("LIFECYCLE", "RESUME de l'activité")
+        cycle("RESUME")
     }
 }

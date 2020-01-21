@@ -1,4 +1,4 @@
-package fr.isen.bilisari.androidtoolbox
+package fr.isen.bilisari.androidtoolbox.fragment
 
 
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import fr.isen.bilisari.androidtoolbox.R
 import kotlinx.android.synthetic.main.activity_lifecycle.*
 
 // TODO: Rename parameter arguments, choose names that match

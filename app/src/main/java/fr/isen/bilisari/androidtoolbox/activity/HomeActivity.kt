@@ -1,8 +1,10 @@
-package fr.isen.bilisari.androidtoolbox
+package fr.isen.bilisari.androidtoolbox.activity
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import fr.isen.bilisari.androidtoolbox.Prefs
+import fr.isen.bilisari.androidtoolbox.R
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -19,7 +21,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         imgBackup.setOnClickListener {
-
+            startActivity(Intent(this@HomeActivity, RegisterActivity::class.java))
         }
 
         imgPermissions.setOnClickListener {

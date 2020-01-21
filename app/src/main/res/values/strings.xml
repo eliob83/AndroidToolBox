@@ -5,8 +5,15 @@
     <string name="login_username">Identifiant</string>
     <string name="login_password">Mot de passe</string>
     <string name="action_login_validate">Valider</string>
-    <string name="action_login_register">S'inscrire</string>
     <string name="login_fail">Mauvais couple identifiant/mot de passe</string>
+
+    <string name="register_title">S\'enregistrer</string>
+    <string name="register_surname">Nom</string>
+    <string name="register_firstname">Prénom</string>
+    <string name="register_birthdate">Date de naissance</string>
+    <string name="action_register_validate">Valider</string>
+    <string name="action_register_back">Retour</string>
+    <string name="action_register_read">Lire</string>
 
     <string name="home_title">Bonjour</string>
     <string name="home_lifecycle">Cycle de vie</string>

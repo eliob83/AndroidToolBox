@@ -1,12 +1,16 @@
-package fr.isen.bilisari.androidtoolbox
+package fr.isen.bilisari.androidtoolbox.activity
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import fr.isen.bilisari.androidtoolbox.fragment.LifecycleFragment
+import fr.isen.bilisari.androidtoolbox.fragment.LifecycleFragmentBis
+import fr.isen.bilisari.androidtoolbox.R
 import kotlinx.android.synthetic.main.activity_lifecycle.*
 
 
-class LifecycleActivity : AppCompatActivity(), LifecycleFragment.OnFragmentInteractionListener {
+class LifecycleActivity : AppCompatActivity(),
+    LifecycleFragment.OnFragmentInteractionListener {
     fun cycle(state: String) {
         Log.d("LIFECYCLE", state)
         textState.text = state

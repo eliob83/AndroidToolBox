@@ -1,10 +1,11 @@
-package fr.isen.bilisari.androidtoolbox
+package fr.isen.bilisari.androidtoolbox.activity
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import fr.isen.bilisari.androidtoolbox.Prefs
+import fr.isen.bilisari.androidtoolbox.R
 import kotlinx.android.synthetic.main.activity_login.*
 
 
@@ -23,10 +24,6 @@ class LoginActivity : AppCompatActivity() {
 
         btnLogin.setOnClickListener {
             checkCredentials(inputUsername.text.toString(), inputPassword.text.toString(), true)
-        }
-
-        btnRegister.setOnClickListener {
-            startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
         }
     }
 

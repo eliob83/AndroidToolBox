@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LifecycleActivity">
+    tools:context=".activity.LifecycleActivity">
 
     <!--
     <fragment
         android:id="@+id/fragmentBis"
-        android:name="fr.isen.bilisari.androidtoolbox.LifecycleFragmentBis"
+        android:name="fr.isen.bilisari.androidtoolbox.fragment.LifecycleFragmentBis"
         android:layout_width="229dp"
         android:layout_height="207dp"
         android:layout_marginTop="5dp"
@@ -43,7 +43,7 @@
 
         <!--<fragment
             android:id="@+id/fragment"
-            android:name="fr.isen.bilisari.androidtoolbox.LifecycleFragment"
+            android:name="fr.isen.bilisari.androidtoolbox.fragment.LifecycleFragment"
             android:layout_width="230dp"
             android:layout_height="207dp" />-->
     </LinearLayout>

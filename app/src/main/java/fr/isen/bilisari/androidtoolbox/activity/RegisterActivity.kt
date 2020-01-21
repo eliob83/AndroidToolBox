@@ -76,7 +76,7 @@ class RegisterActivity : AppCompatActivity() {
                 years = (days / 365)
             }
 
-            builder.setMessage("Nom: ${user.surname}\nPrénom: ${user.firstname}\nDate de naissance: ${birthday.toString()}\nÂge: $years").create().show()
+            builder.setMessage("Nom: ${user.surname}\nPrénom: ${user.firstname}\nDate de naissance: ${birthday}\nÂge: $years").create().show()
         }
     }
 }

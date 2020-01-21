@@ -13,6 +13,15 @@
     <string name="home_permissions">Permissions</string>
     <string name="home_webservices">Webservices</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_lifecycle_switch">Zé dibar !</string>
+
+    <string name="fragment_lifecycle">Bienvenue dans le premier fragment</string>
+    <string name="fragment_lifecycle_bis">Et voici le second</string>
+
+
+    <string name="desc_logo_isen">Logo ISEN Toulon</string>
+    <string name="desc_phone_call">Phone call icon</string>
+    <string name="desc_sd_card">SD card icon</string>
+    <string name="desc_chat_bubble">Chat bubble icon</string>
+    <string name="desc_download_icon">Download done icon</string>
 </resources>

@@ -12,14 +12,13 @@
     tools:context=".LoginActivity">
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/btnLogin"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:background="#d4010f"
         android:enabled="true"
-        android:onClick="validateForm"
         android:text="@string/action_login_validate"
         android:textColor="@android:color/white"
         android:textColorLink="#E458FC"
@@ -27,15 +26,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutPassword"
         app:layout_constraintVertical_bias="0.3" />
 
     <ImageView
-        android:id="@+id/iv_logo"
+        android:id="@+id/logo"
         android:layout_width="196dp"
         android:layout_height="142dp"
         android:layout_marginTop="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+        android:contentDescription="@string/desc_logo_isen"
+        app:layout_constraintBottom_toTopOf="@+id/inputLayoutUsername"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,19 +43,19 @@
         app:srcCompat="@drawable/logo_isen" />
 
     <TextView
-        android:id="@+id/tv_title"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="@string/login_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/iv_logo"
-        app:layout_constraintEnd_toEndOf="@+id/iv_logo"
-        app:layout_constraintStart_toStartOf="@+id/iv_logo" />
+        app:layout_constraintBottom_toTopOf="@+id/logo"
+        app:layout_constraintEnd_toEndOf="@+id/logo"
+        app:layout_constraintStart_toStartOf="@+id/logo" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/inputLayoutUsername"
         android:layout_width="198dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -64,7 +64,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/username"
+            android:id="@+id/inputUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/login_username"
@@ -72,16 +72,16 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
+        android:id="@+id/inputLayoutPassword"
         android:layout_width="198dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutUsername">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password"
+            android:id="@+id/inputPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/login_password"

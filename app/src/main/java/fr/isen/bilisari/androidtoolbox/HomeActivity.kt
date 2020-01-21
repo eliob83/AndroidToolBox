@@ -1,31 +1,31 @@
 package fr.isen.bilisari.androidtoolbox
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-    }
 
-    fun lifecycle(v: View) {
-        val intent = Intent(this@HomeActivity, LifecycleActivity::class.java)
-        startActivity(intent)
-    }
+        imgLifecycle.setOnClickListener {
+            startActivity(Intent(this@HomeActivity, LifecycleActivity::class.java))
+        }
 
-    fun backup(v: View) {
+        imgBackup.setOnClickListener {
 
-    }
+        }
 
-    fun permissions(v: View) {
+        imgPermissions.setOnClickListener {
 
-    }
+        }
 
-    fun webservices(v: View) {
+        imgWebservices.setOnClickListener {
+
+        }
 
     }
 }

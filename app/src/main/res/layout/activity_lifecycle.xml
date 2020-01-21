@@ -6,13 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".LifecycleActivity">
 
+    <!--
     <fragment
-        android:id="@+id/fragment"
-        class="fr.isen.bilisari.androidtoolbox.LifecycleFragment"
-        android:layout_width="230dp"
+        android:id="@+id/fragmentBis"
+        android:name="fr.isen.bilisari.androidtoolbox.LifecycleFragmentBis"
+        android:layout_width="229dp"
         android:layout_height="207dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSwitch"
+        app:layout_constraintVertical_bias="0.503" />
+       -->
+
+    <Button
+        android:id="@+id/btnSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/action_lifecycle_switch"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/layoutFragment"
+        android:layout_width="230dp"
+        android:layout_height="207dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/btnSwitch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--<fragment
+            android:id="@+id/fragment"
+            android:name="fr.isen.bilisari.androidtoolbox.LifecycleFragment"
+            android:layout_width="230dp"
+            android:layout_height="207dp" />-->
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

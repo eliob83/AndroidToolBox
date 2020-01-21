@@ -7,115 +7,137 @@
     tools:context=".HomeActivity">
 
     <ImageView
-        android:id="@+id/iv_home"
+        android:id="@+id/logo"
         android:layout_width="217dp"
         android:layout_height="36dp"
         android:layout_marginStart="97dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="97dp"
-        app:layout_constraintBottom_toTopOf="@+id/ib_lifecycle"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/desc_logo_isen"
+        app:layout_constraintBottom_toTopOf="@+id/title"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_isen" />
 
     <TextView
-        android:id="@+id/tv_title"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="@string/home_title"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/ib_lifecycle"
+        app:layout_constraintBottom_toTopOf="@+id/imgBackup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_home" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/ib_permissions"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+    <ImageView
+        android:id="@+id/imgBackup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
         android:background="#d4010f"
-        android:onClick="permissions"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/ib_lifecycle"
-        app:layout_constraintTop_toBottomOf="@+id/ib_lifecycle"
-        app:layout_constraintVertical_bias="0.19999999"
-        app:srcCompat="@android:drawable/stat_sys_speakerphone" />
-
-    <ImageButton
-        android:id="@+id/ib_backup"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#d4010f"
-        android:onClick="backup"
+        android:contentDescription="@string/desc_sd_card"
+        android:paddingLeft="18dp"
+        android:paddingTop="18dp"
+        android:paddingRight="18dp"
+        android:paddingBottom="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.66"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ib_lifecycle"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imgLifecycle"
+        app:layout_constraintTop_toTopOf="@+id/imgLifecycle"
         app:srcCompat="@android:drawable/stat_notify_sdcard" />
 
-    <ImageButton
-        android:id="@+id/ib_webservices"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+    <ImageView
+        android:id="@+id/imgLifecycle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:background="#d4010f"
-        android:onClick="webservices"
-        app:layout_constraintStart_toStartOf="@+id/ib_backup"
-        app:layout_constraintTop_toTopOf="@+id/ib_permissions"
-        app:srcCompat="@android:drawable/stat_sys_download_done" />
-
-    <ImageButton
-        android:id="@+id/ib_lifecycle"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#d4010f"
-        android:onClick="lifecycle"
+        android:contentDescription="@string/desc_chat_bubble"
+        android:paddingLeft="18dp"
+        android:paddingTop="18dp"
+        android:paddingRight="18dp"
+        android:paddingBottom="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintEnd_toStartOf="@+id/imgBackup"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.39999998"
         app:srcCompat="@android:drawable/stat_notify_chat" />
 
     <TextView
-        android:id="@+id/tv_lifecycle"
+        android:id="@+id/textLifecycle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/home_lifecycle"
-        app:layout_constraintEnd_toEndOf="@+id/ib_lifecycle"
-        app:layout_constraintStart_toStartOf="@+id/ib_lifecycle"
-        app:layout_constraintTop_toBottomOf="@+id/ib_lifecycle" />
+        app:layout_constraintEnd_toEndOf="@+id/imgLifecycle"
+        app:layout_constraintStart_toStartOf="@+id/imgLifecycle"
+        app:layout_constraintTop_toBottomOf="@+id/imgLifecycle" />
 
     <TextView
-        android:id="@+id/tv_backup"
+        android:id="@+id/textBackup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/home_backup"
-        app:layout_constraintEnd_toEndOf="@+id/ib_backup"
-        app:layout_constraintStart_toStartOf="@+id/ib_backup"
-        app:layout_constraintTop_toBottomOf="@+id/ib_backup" />
+        app:layout_constraintEnd_toEndOf="@+id/imgBackup"
+        app:layout_constraintStart_toStartOf="@+id/imgBackup"
+        app:layout_constraintTop_toBottomOf="@+id/imgBackup" />
 
     <TextView
-        android:id="@+id/tv_permissions"
+        android:id="@+id/textPermissions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/home_permissions"
-        app:layout_constraintEnd_toEndOf="@+id/ib_permissions"
-        app:layout_constraintStart_toStartOf="@+id/ib_permissions"
-        app:layout_constraintTop_toBottomOf="@+id/ib_permissions" />
+        app:layout_constraintEnd_toEndOf="@+id/imgPermissions"
+        app:layout_constraintStart_toStartOf="@+id/imgPermissions"
+        app:layout_constraintTop_toBottomOf="@+id/imgPermissions" />
 
     <TextView
-        android:id="@+id/tv_webservices"
+        android:id="@+id/textWebservices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/home_webservices"
-        app:layout_constraintEnd_toEndOf="@+id/ib_webservices"
-        app:layout_constraintStart_toStartOf="@+id/ib_webservices"
-        app:layout_constraintTop_toBottomOf="@+id/ib_webservices" />
+        app:layout_constraintEnd_toEndOf="@+id/imgWebservices"
+        app:layout_constraintStart_toStartOf="@+id/imgWebservices"
+        app:layout_constraintTop_toBottomOf="@+id/imgWebservices" />
+
+    <ImageView
+        android:id="@+id/imgWebservices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:background="#d4010f"
+        android:contentDescription="@string/desc_download_icon"
+        android:paddingLeft="18dp"
+        android:paddingTop="18dp"
+        android:paddingRight="18dp"
+        android:paddingBottom="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imgPermissions"
+        app:layout_constraintTop_toTopOf="@+id/imgPermissions"
+        app:srcCompat="@android:drawable/stat_sys_download_done" />
+
+    <ImageView
+        android:id="@+id/imgPermissions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:background="#d4010f"
+        android:contentDescription="@string/desc_phone_call"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/imgWebservices"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textLifecycle"
+        app:srcCompat="@android:drawable/stat_sys_speakerphone" />
 </androidx.constraintlayout.widget.ConstraintLayout>

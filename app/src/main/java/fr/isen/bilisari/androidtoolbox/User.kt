@@ -1,6 +1,11 @@
 package fr.isen.bilisari.androidtoolbox
 
+import androidx.room.PrimaryKey
+
 class User {
+    @PrimaryKey(autoGenerate = true)
+    var id: Int,
+
     var firstname: String = ""
     var surname: String = ""
     var birthdate: String = ""

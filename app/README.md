@@ -26,3 +26,7 @@ c) Utilisation de Log.d et override de onCreate, onResume, onPause, onDestroy...
 
 d) Lorsque l'orientation change, l'activité est recréée. Les dimensions de l'application change (inversement des axes), affichage différent possible.
 
+
+## Partie IV :
+
+h) Génération de clef privée/publique, stockage dans SharedPreferences dans la clef privée afin de déchiffrer le message codé par la clef publique et stocké en JSON

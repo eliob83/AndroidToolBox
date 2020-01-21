@@ -14,6 +14,7 @@
     <string name="action_register_validate">Valider</string>
     <string name="action_register_back">Retour</string>
     <string name="action_register_read">Lire</string>
+    <string name="register_alert_title">Vos informations</string>
 
     <string name="home_title">Bonjour</string>
     <string name="home_lifecycle">Cycle de vie</string>

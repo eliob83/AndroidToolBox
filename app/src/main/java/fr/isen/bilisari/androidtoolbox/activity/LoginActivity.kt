@@ -10,36 +10,43 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 
 class LoginActivity : AppCompatActivity() {
-    var prefs: Prefs? = null
+    // SharedPreferences object
+    private var prefs: Prefs? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        prefs = Prefs(this)
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        // Recharge des identifiants
+        prefs = Prefs(this)
+
+        // Credentials-saved check
         checkCredentials(prefs!!.username, prefs!!.password, false)
 
 
+        // Listeners
         btnLogin.setOnClickListener {
+            // Check credentials from user inputs
             checkCredentials(inputUsername.text.toString(), inputPassword.text.toString(), true)
         }
     }
 
-    private fun checkCredentials(username: String?, password: String?, toasting: Boolean) {
-        // Check des identifiants
+    private fun checkCredentials(username: String, password: String, toasting: Boolean) {
+        // Credentials check
         if (username == "damien" && password == "fontes") {
-            // Sauvegarde de la "session"
+            // "Session" save
             prefs?.username = username
             prefs?.password = password
 
+            // Silent check?
             if (toasting)
-                Toast.makeText(this, "Enchanté $username", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, resources.getString(R.string.login_success, username), Toast.LENGTH_SHORT).show()
+
 
             finish()
             startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
         } else {
+            // Silent check?
             if (toasting)
                 Toast.makeText(this, R.string.login_fail, Toast.LENGTH_SHORT).show()
         }

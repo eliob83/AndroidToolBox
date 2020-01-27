@@ -1,20 +1,21 @@
 package fr.isen.bilisari.androidtoolbox
 
 class User {
+    // User data
     var firstname: String = ""
     var surname: String = ""
-    var birthdate: String = ""
+    var birthday: String = ""
 
 
-    constructor() {}
-
-    constructor(firstname: String, surname: String, birthdate: String) {
-        this.firstname = firstname
-        this.surname = surname
-        this.birthdate = birthdate
+    constructor()
+    constructor(parFirstname: String, parSurname: String, parBirthday: String) {
+        firstname = parFirstname
+        surname = parSurname
+        birthday = parBirthday
     }
 
-    override fun toString(): String {
-        return "User $surname, $firstname from $birthdate"
+
+    override fun toString() : String {
+        return "User $surname, $firstname born on $birthday"
     }
 }

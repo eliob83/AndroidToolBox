@@ -4,32 +4,40 @@ import com.google.gson.Gson
 import java.io.File
 import java.io.FileReader
 
-class JSON {
-    private var filepath: String = ""
+class UserJSON {
     private val gson = Gson()
 
+    // Path to JSON file to handle
+    private var filepath: String = ""
+
+    // JSON-related user
     var user: User = User()
 
-    constructor() {}
+
+    // Path specification is mandatory
     constructor(path: String) {
         setFilepath(path)
     }
 
 
-    fun setFilepath(path: String): JSON {
+    // Set filepath of the JSON file to use
+    fun setFilepath(path: String) : UserJSON {
         filepath = path + "user.json"
 
         return this
     }
 
 
-    fun saveUser(user: User): JSON {
+
+    // Save current user as JSON
+    fun saveUser(user: User) : UserJSON {
         File(filepath).writeText(gson.toJson(user))
 
         return this
     }
 
-    fun loadUser(): User {
+    // Load JSON as current user
+    fun loadUser() : User {
         return gson.fromJson(FileReader(filepath), User::class.java)
     }
 }

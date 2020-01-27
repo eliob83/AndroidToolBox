@@ -25,7 +25,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
+        android:background="#d4010f"
         android:text="@string/action_lifecycle_switch"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/textState"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

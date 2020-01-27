@@ -4,29 +4,36 @@ import android.content.Context
 import android.content.SharedPreferences
 
 class Prefs(context: Context) {
-    private val PREFS_FILENAME = "fr.isen.bilisari.androidtoolbox.prefs"
+    // Filename of SharedPreferences to use
+    private val filename = "fr.isen.bilisari.androidtoolbox.prefs"
 
-    private val USERNAME = "user.username"
-    private val PASSWORD = "user.password"
+    // Field names in the SharedPreferences
+    private val fieldUsername = "user.username"
+    private val fieldPassword = "user.password"
 
-    private val prefs: SharedPreferences = context.getSharedPreferences(PREFS_FILENAME, Context.MODE_PRIVATE);
-
-
-    var username: String?
-        get() = prefs.getString(USERNAME, "")
-        set(value) = prefs.edit().putString(USERNAME, value).apply()
-
-    var password: String?
-        get() = prefs.getString(PASSWORD, "")
-        set(value) = prefs.edit().putString(PASSWORD, value).apply()
+    // Current SharedPreferences
+    private val prefs: SharedPreferences = context.getSharedPreferences(filename, Context.MODE_PRIVATE);
 
 
-    fun setCredentials(parUsername: String?, parPassword: String?) {
+    // Username of the saved user
+    var username: String
+        get() = prefs.getString(fieldUsername, "").orEmpty()
+        set(value) = prefs.edit().putString(fieldUsername, value).apply()
+
+    // Password of the saved user
+    var password: String
+        get() = prefs.getString(fieldPassword, "").orEmpty()
+        set(value) = prefs.edit().putString(fieldPassword, value).apply()
+
+
+    // Setter shortcut
+    fun setCredentials(parUsername: String, parPassword: String) {
         username = parUsername
         password = parPassword
     }
 
+    // Delete credentials from SharedPreferences
     fun removeCredentials() {
-        prefs.edit().remove(USERNAME).remove(PASSWORD).apply()
+        prefs.edit().remove(fieldUsername).remove(fieldPassword).apply()
     }
 }

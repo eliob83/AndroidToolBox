@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AndroidToolBox</string>
+
+
+    <string name="login_title">Connection</string>
+
+    <string name="login_username">Username</string>
+    <string name="login_password">Password</string>
+
+    <string name="login_validate">Validate</string>
+    <string name="login_success">Enchanté %1$s</string>
+    <string name="login_fail">Bad credentials</string>
+
+
+    <string name="lifecycle_switch">Let\'s switch!</string>
+
+    <string name="fragment_lifecycle">Welcome to the first fragment</string>
+    <string name="fragment_lifecycle_bis">And here comes the second one</string>
+
+
+    <string name="storage_title">Save</string>
+
+    <string name="storage_surname">Name</string>
+    <string name="storage_firstname">Firstname</string>
+    <string name="storage_birthday">Birthday</string>
+    <string name="storage_birthday_default">DD/MM/YYYY</string>
+    <string name="storage_age">Age</string>
+
+    <string name="storage_back">Back</string>
+
+    <string name="storage_validate">Validate</string>
+    <string name="storage_form_invalid">Invalid field(s)</string>
+    <string name="storage_form_valid">User saved</string>
+
+    <string name="storage_read">Read</string>
+    <string name="storage_read_error">No save found</string>
+
+    <string name="storage_delete">Delete</string>
+    <string name="storage_delete_done">Deleted</string>
+    <string name="storage_delete_error">Deletion impossible</string>
+
+    <string name="storage_alert_title">Your informations</string>
+    <string name="storage_alert_message">Name: %1$s\nFirstname: %2$s\nBirthday: %3$s\nAge: %4$d</string>
+
+
+    <string name="permissions_title">Android data access</string>
+
+    <string name="permissions_dialog_title">Image source</string>
+    <string name="permissions_dialog_gallery">Gallery</string>
+    <string name="permissions_dialog_camera">Camera</string>
+
+    <string name="permissions_coords">Latitude: %1$f\nLongitude: %2$f</string>
+    <string name="permissions_gps_denied">GPS access forbidden</string>
+    <string name="permissions_gps_disabled">GPS disabled</string>
+    <string name="permissions_gps_enabled">GPS enabled</string>
+
+    <string name="permissions_denied">Permission denied</string>
+
+
+    <string name="webservices_api_error">API Error: %1$s</string>
+
+    <string name="webservices_user_name_default">Firstname NAME</string>
+    <string name="webservices_user_address_default">1 Republic Avenue</string>
+    <string name="webservices_user_email_default">firstname.name@example.com</string>
+
+
+    <string name="home_title">Hello</string>
+
+    <string name="home_lifecycle">Lifecycle</string>
+    <string name="home_storage">Storage</string>
+    <string name="home_permissions">Permissions</string>
+    <string name="home_webservices">Webservices</string>
+
+    <string name="home_logout">Disconnect</string>
+
+
+    <string name="desc_logo_isen">ISEN Toulon logo</string>
+    <string name="desc_phone_call">Phone call icon</string>
+    <string name="desc_sd_card">SD card icon</string>
+    <string name="desc_chat_bubble">Chat bubble icon</string>
+    <string name="desc_download_icon">Download done icon</string>
+    <string name="desc_camera">Camera icon</string>
+    <string name="desc_user_picture">User picture</string>
+</resources>

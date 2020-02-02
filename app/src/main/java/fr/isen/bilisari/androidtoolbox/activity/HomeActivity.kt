@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
     // SharedPreferences object
-    private var prefs: Prefs? = null
+    private lateinit var prefs: Prefs
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +28,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         imgPermissions.setOnClickListener {
-
+            startActivity(Intent(this@HomeActivity, InfosActivity::class.java))
         }
 
         imgWebservices.setOnClickListener {
@@ -38,7 +38,7 @@ class HomeActivity : AppCompatActivity() {
 
         btnLogout.setOnClickListener {
             // Remove session
-            prefs!!.removeCredentials()
+            prefs.removeCredentials()
             // Back to login screen
             finish()
             startActivity(Intent(this@HomeActivity, LoginActivity::class.java))

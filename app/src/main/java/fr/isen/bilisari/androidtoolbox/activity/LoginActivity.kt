@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
     // SharedPreferences object
-    private var prefs: Prefs? = null
+    private lateinit var prefs: Prefs
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +21,7 @@ class LoginActivity : AppCompatActivity() {
         prefs = Prefs(this)
 
         // Credentials-saved check
-        checkCredentials(prefs!!.username, prefs!!.password, false)
+        checkCredentials(prefs.username, prefs.password, false)
 
 
         // Listeners
@@ -35,8 +35,8 @@ class LoginActivity : AppCompatActivity() {
         // Credentials check
         if (username == "damien" && password == "fontes") {
             // "Session" save
-            prefs?.username = username
-            prefs?.password = password
+            prefs.username = username
+            prefs.password = password
 
             // Silent check?
             if (toasting)

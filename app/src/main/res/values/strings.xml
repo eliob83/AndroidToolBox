@@ -31,6 +31,20 @@
     <string name="register_alert_message">Nom : %1$s\nPrénom : %2$s\nDate de naissance : %3$s\nÂge : %4$d</string>
 
 
+    <string name="infos_title">Accès aux informations Android</string>
+
+    <string name="infos_dialog_title">Source de l\'image</string>
+    <string name="infos_gallery">Galerie</string>
+    <string name="infos_camera">Appareil photo</string>
+
+    <string name="infos_coords">Latitude : %1$f\nLongitude : %2$f</string>
+    <string name="infos_gps_denied">Accès au GPS interdit</string>
+    <string name="infos_gps_disabled">GPS désactivé</string>
+    <string name="infos_gps_enabled">GPS activé</string>
+
+    <string name="permission_denied">Permission refusée</string>
+
+
     <string name="home_title">Bonjour</string>
 
     <string name="home_lifecycle">Cycle de vie</string>
@@ -52,4 +66,5 @@
     <string name="desc_sd_card">SD card icon</string>
     <string name="desc_chat_bubble">Chat bubble icon</string>
     <string name="desc_download_icon">Download done icon</string>
+    <string name="desc_camera">Camera icon</string>
 </resources>

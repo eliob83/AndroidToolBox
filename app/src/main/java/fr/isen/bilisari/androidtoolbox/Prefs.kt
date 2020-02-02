@@ -4,13 +4,6 @@ import android.content.Context
 import android.content.SharedPreferences
 
 class Prefs(context: Context) {
-    // Filename of SharedPreferences to use
-    private val filename = "fr.isen.bilisari.androidtoolbox.prefs"
-
-    // Field names in the SharedPreferences
-    private val fieldUsername = "user.username"
-    private val fieldPassword = "user.password"
-
     // Current SharedPreferences
     private val prefs: SharedPreferences = context.getSharedPreferences(filename, Context.MODE_PRIVATE);
 
@@ -35,5 +28,15 @@ class Prefs(context: Context) {
     // Delete credentials from SharedPreferences
     fun removeCredentials() {
         prefs.edit().remove(fieldUsername).remove(fieldPassword).apply()
+    }
+
+
+    companion object {
+        // Filename of SharedPreferences to use
+        private const val filename = "fr.isen.bilisari.androidtoolbox.prefs"
+
+        // Field names in the SharedPreferences
+        private const val fieldUsername = "user.username"
+        private const val fieldPassword = "user.password"
     }
 }

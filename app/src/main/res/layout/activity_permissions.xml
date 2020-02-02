@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.InfosActivity">
+    tools:context=".activity.PermissionsActivity">
 
     <TextView
         android:id="@+id/textTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="@string/infos_title"
+        android:text="@string/permissions_title"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="@string/infos_gps_denied"
+        android:text="@string/permissions_gps_denied"
         app:layout_constraintBottom_toBottomOf="@+id/imgCamera"
         app:layout_constraintStart_toEndOf="@+id/imgCamera"
         app:layout_constraintTop_toTopOf="@+id/imgCamera" />

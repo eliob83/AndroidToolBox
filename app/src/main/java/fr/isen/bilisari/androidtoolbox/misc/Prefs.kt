@@ -1,11 +1,11 @@
-package fr.isen.bilisari.androidtoolbox
+package fr.isen.bilisari.androidtoolbox.misc
 
 import android.content.Context
 import android.content.SharedPreferences
 
 class Prefs(context: Context) {
     // Current SharedPreferences
-    private val prefs: SharedPreferences = context.getSharedPreferences(filename, Context.MODE_PRIVATE);
+    private val prefs: SharedPreferences = context.getSharedPreferences(filename, Context.MODE_PRIVATE)
 
 
     // Username of the saved user
@@ -27,7 +27,9 @@ class Prefs(context: Context) {
 
     // Delete credentials from SharedPreferences
     fun removeCredentials() {
-        prefs.edit().remove(fieldUsername).remove(fieldPassword).apply()
+        prefs.edit().remove(fieldUsername).remove(
+            fieldPassword
+        ).apply()
     }
 
 

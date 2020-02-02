@@ -19,7 +19,7 @@
         android:layout_gravity="start"
         android:background="#d4010f"
         android:enabled="true"
-        android:text="@string/action_login_validate"
+        android:text="@string/login_validate"
         android:textColor="@android:color/white"
         android:textColorLink="#E458FC"
         android:visibility="visible"

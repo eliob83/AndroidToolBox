@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.RegisterActivity">
+    tools:context=".activity.StorageActivity">
 
 
     <TextView
         android:id="@+id/inputBirthday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/register_birthday_default"
+        android:text="@string/storage_birthday_default"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -36,7 +36,7 @@
             android:id="@+id/inputSurname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/register_surname" />
+            android:hint="@string/storage_surname" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -53,7 +53,7 @@
             android:id="@+id/inputFirstname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/register_firstname" />
+            android:hint="@string/storage_firstname" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -61,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
-        android:text="@string/register_title"
+        android:text="@string/storage_title"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#d4010f"
-        android:text="@string/action_register_validate"
+        android:text="@string/storage_validate"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/btnBack"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#d4010f"
-        android:text="@string/action_register_back"
+        android:text="@string/storage_back"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,16 +101,28 @@
         android:layout_marginStart="32dp"
         android:layout_marginBottom="32dp"
         android:background="#d4010f"
-        android:text="@string/action_register_read"
+        android:text="@string/storage_read"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="#d4010f"
+        android:text="@string/storage_delete"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textBirthday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/register_birthday"
+        android:text="@string/storage_birthday"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/inputBirthday"
         app:layout_constraintEnd_toEndOf="parent"

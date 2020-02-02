@@ -18,18 +18,18 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import fr.isen.bilisari.androidtoolbox.ContactAdapter
 import fr.isen.bilisari.androidtoolbox.R
+import fr.isen.bilisari.androidtoolbox.activity.adapter.ContactAdapter
 import fr.isen.bilisari.androidtoolbox.model.Contact
-import kotlinx.android.synthetic.main.activity_infos.*
+import kotlinx.android.synthetic.main.activity_permissions.*
 
 
-class InfosActivity : AppCompatActivity(), LocationListener {
+class PermissionsActivity : AppCompatActivity(), LocationListener {
     private lateinit var locationManager: LocationManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_infos)
+        setContentView(R.layout.activity_permissions)
 
         // Init contacts layout
         viewContacts.layoutManager = LinearLayoutManager(this)
@@ -59,9 +59,9 @@ class InfosActivity : AppCompatActivity(), LocationListener {
     // Show an alert dialog asking for user choice
     private fun showActionsDialog() {
         val dialog = AlertDialog.Builder(this)
-        dialog.setTitle(resources.getText(R.string.infos_dialog_title))
+        dialog.setTitle(resources.getText(R.string.permissions_dialog_title))
 
-        val dialogItems = arrayOf(resources.getText(R.string.infos_gallery), resources.getText(R.string.infos_camera))
+        val dialogItems = arrayOf(resources.getText(R.string.permissions_dialog_gallery), resources.getText(R.string.permissions_dialog_camera))
         dialog.setItems(dialogItems) { _, which ->
             when (which) {
                 0 -> takeFromGallery()
@@ -99,6 +99,8 @@ class InfosActivity : AppCompatActivity(), LocationListener {
 
     // Results of dialog actions
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
         if (resultCode == Activity.RESULT_OK) {
             when (requestCode) {
                 IMAGE_GALLERY_CODE ->
@@ -116,7 +118,11 @@ class InfosActivity : AppCompatActivity(), LocationListener {
 
     // Set contacts adapter from phone contacts list
     private fun updateContacts() {
-        viewContacts.adapter = ContactAdapter(getContacts(), this)
+        viewContacts.adapter =
+            ContactAdapter(
+                getContacts(),
+                this
+            )
     }
 
 
@@ -169,6 +175,7 @@ class InfosActivity : AppCompatActivity(), LocationListener {
     *   LOCATION
     */
 
+    // Permission checked with custom function
     @SuppressLint("MissingPermission")
     // Request location update
     private fun updateLocation() {
@@ -186,22 +193,22 @@ class InfosActivity : AppCompatActivity(), LocationListener {
 
     // Set location text
     private fun setLocation(location: Location) {
-        textCoords.text = resources.getString(R.string.infos_coords, location.latitude, location.longitude)
+        textCoords.text = resources.getString(R.string.permissions_coords, location.latitude, location.longitude)
     }
 
     override fun onLocationChanged(location: Location) {
-        textCoords.text = resources.getString(R.string.infos_coords, location.latitude, location.longitude)
+        textCoords.text = resources.getString(R.string.permissions_coords, location.latitude, location.longitude)
     }
 
     override fun onProviderDisabled(provider: String) {
-        Toast.makeText(this, resources.getText(R.string.infos_gps_disabled), Toast.LENGTH_SHORT).show()
-        textCoords.text = resources.getText(R.string.infos_gps_disabled)
+        Toast.makeText(this, resources.getText(R.string.permissions_gps_disabled), Toast.LENGTH_SHORT).show()
+        textCoords.text = resources.getText(R.string.permissions_gps_disabled)
         // Open settings panel
         //startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
     }
 
     override fun onProviderEnabled(provider: String) {
-        Toast.makeText(this, resources.getText(R.string.infos_gps_enabled), Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, resources.getText(R.string.permissions_gps_enabled), Toast.LENGTH_SHORT).show()
     }
 
     override fun onStatusChanged(provider: String, status: Int, extras: Bundle) {
@@ -237,7 +244,7 @@ class InfosActivity : AppCompatActivity(), LocationListener {
                 }
             }
         } else {
-            Toast.makeText(this, resources.getText(R.string.permission_denied), Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, resources.getText(R.string.permissions_denied), Toast.LENGTH_SHORT).show()
         }
     }
 

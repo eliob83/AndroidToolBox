@@ -82,7 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/home_backup"
+        android:text="@string/home_storage"
         app:layout_constraintEnd_toEndOf="@+id/imgBackup"
         app:layout_constraintStart_toStartOf="@+id/imgBackup"
         app:layout_constraintTop_toBottomOf="@+id/imgBackup" />
@@ -148,7 +148,7 @@
         android:layout_marginBottom="32dp"
         android:background="#d4010f"
         android:padding="8dp"
-        android:text="@string/action_home_logout"
+        android:text="@string/home_logout"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

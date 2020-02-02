@@ -48,7 +48,7 @@ class RegisterActivity : AppCompatActivity() {
 
         // Listeners
         btnValidate.setOnClickListener {
-            if (!inputFirstname.text.isNullOrEmpty() && !inputSurname.text.isNullOrEmpty() && !inputBirthday.text.equals(R.string.register_birthday_default)) {
+            if (!inputFirstname.text.isNullOrEmpty() && !inputSurname.text.isNullOrEmpty() && !inputBirthday.text.equals(resources.getText(R.string.register_birthday_default))) {
                 UserJSON(cacheDir.absolutePath).saveUser(User(inputFirstname.text.toString(), inputSurname.text.toString(), inputBirthday.text.toString()))
                 Toast.makeText(this, R.string.register_toast_valid, Toast.LENGTH_SHORT).show()
             } else {
@@ -69,7 +69,8 @@ class RegisterActivity : AppCompatActivity() {
 
             val now = Calendar.getInstance()
             val birthday = Calendar.getInstance()
-            birthday.set(Integer.parseInt(arrBirthday[2]), Integer.parseInt(arrBirthday[1]), Integer.parseInt(arrBirthday[0]))
+            // January is month 0
+            birthday.set(Integer.parseInt(arrBirthday[2]), Integer.parseInt(arrBirthday[1])-1, Integer.parseInt(arrBirthday[0]))
 
             /*
             // Calculation by hand
@@ -84,8 +85,8 @@ class RegisterActivity : AppCompatActivity() {
             }*/
 
             var age = now.get(Calendar.YEAR) - birthday.get(Calendar.YEAR)
-            // If birthday had not already taken place this year (there is an awkward 31-days offset on the second DAY_OF_YEAR)
-            if (now.get(Calendar.DAY_OF_YEAR) < birthday.get(Calendar.DAY_OF_YEAR)-31) {
+            // If birthday had not already taken place this year
+            if (now.get(Calendar.DAY_OF_YEAR) < birthday.get(Calendar.DAY_OF_YEAR)) {
                 age--
             }
 

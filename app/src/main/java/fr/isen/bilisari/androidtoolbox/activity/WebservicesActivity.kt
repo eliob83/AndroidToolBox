@@ -37,7 +37,7 @@ class WebservicesActivity : AppCompatActivity() {
                 val users = ArrayList<RandomUser>()
                 val json = response.getJSONArray("results")
 
-                for (i in 0 until json.length()-1) {
+                for (i in 0 until json.length()) {
                     users.add(Gson().fromJson(json[i].toString(), RandomUser::class.java))
                 }
 

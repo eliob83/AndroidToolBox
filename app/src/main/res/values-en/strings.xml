@@ -72,7 +72,8 @@
     <string name="home_permissions">Permissions</string>
     <string name="home_webservices">Webservices</string>
 
-    <string name="home_logout">Disconnect</string>
+    <string name="home_logout">Log out</string>
+    <string name="home_logout_done">Logged out</string>
 
 
     <string name="desc_logo_isen">ISEN Toulon logo</string>

@@ -2,6 +2,7 @@ package fr.isen.bilisari.androidtoolbox.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import fr.isen.bilisari.androidtoolbox.misc.Prefs
 import fr.isen.bilisari.androidtoolbox.R
@@ -39,6 +40,8 @@ class HomeActivity : AppCompatActivity() {
         btnLogout.setOnClickListener {
             // Remove session
             prefs.removeCredentials()
+            Toast.makeText(this, resources.getText(R.string.home_logout_done), Toast.LENGTH_SHORT).show()
+
             // Back to login screen
             finish()
             startActivity(Intent(this@HomeActivity, LoginActivity::class.java))

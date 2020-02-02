@@ -73,6 +73,7 @@
     <string name="home_webservices">Webservices</string>
 
     <string name="home_logout">Déconnexion</string>
+    <string name="home_logout_done">Déconnecté</string>
 
 
     <string name="desc_logo_isen">Logo ISEN Toulon</string>

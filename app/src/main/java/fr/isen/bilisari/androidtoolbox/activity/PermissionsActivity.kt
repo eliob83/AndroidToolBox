@@ -25,7 +25,7 @@ import kotlinx.android.synthetic.main.activity_permissions.*
 
 
 class PermissionsActivity : AppCompatActivity(), LocationListener {
-    private lateinit var locationManager: LocationManager
+    private var locationManager: LocationManager? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +48,7 @@ class PermissionsActivity : AppCompatActivity(), LocationListener {
 
     override  fun onStop() {
         super.onStop()
-        locationManager.removeUpdates(this)
+        locationManager?.removeUpdates(this)
     }
 
 
@@ -180,9 +180,9 @@ class PermissionsActivity : AppCompatActivity(), LocationListener {
     // Request location update
     private fun updateLocation() {
         if (isPermissionGranted(this, PERMISSION_LOCATION)) {
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 1f, this)
+            locationManager?.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 1f, this)
 
-            val location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
+            val location = locationManager?.getLastKnownLocation(LocationManager.GPS_PROVIDER)
             if (location != null) {
                 setLocation(location)
             }

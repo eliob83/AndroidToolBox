@@ -63,7 +63,7 @@ class StorageActivity : AppCompatActivity() {
         }
 
         btnBack.setOnClickListener {
-            startActivity(Intent(this@StorageActivity, HomeActivity::class.java))
+            startActivity(Intent(this@StorageActivity, HomeActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
         }
 
         btnDelete.setOnClickListener {

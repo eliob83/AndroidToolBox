@@ -39,8 +39,7 @@ class LoginActivity : AppCompatActivity() {
 
             Toast.makeText(this, resources.getString(R.string.login_success, username), Toast.LENGTH_SHORT).show()
 
-            finish()
-            startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
+            startActivity(Intent(this@LoginActivity, HomeActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK))
         } else if (toasting) {
             Toast.makeText(this, R.string.login_fail, Toast.LENGTH_SHORT).show()
         }

@@ -17,12 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activity.UserRoomActivity"></activity>
         <activity android:name=".activity.WebservicesActivity" />
         <activity android:name=".activity.PermissionsActivity" />
         <activity android:name=".activity.StorageActivity" />
         <activity android:name=".activity.LifecycleActivity" />
         <activity android:name=".activity.HomeActivity" />
-
         <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,4 +31,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

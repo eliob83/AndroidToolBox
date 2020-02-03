@@ -1,4 +1,4 @@
-package fr.isen.bilisari.androidtoolbox.misc
+package fr.isen.bilisari.androidtoolbox.database
 
 import android.content.Context
 import android.content.SharedPreferences

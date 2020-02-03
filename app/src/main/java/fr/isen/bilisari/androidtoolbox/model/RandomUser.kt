@@ -43,7 +43,7 @@ class RandomUser {
 
     class Picture {
         var large: String? = null
-        var normal: String? = null
+        var medium: String? = null
         var thumbnail: String? = null
     }
 }

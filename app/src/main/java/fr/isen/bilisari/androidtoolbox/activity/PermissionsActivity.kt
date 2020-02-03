@@ -37,8 +37,8 @@ class PermissionsActivity : AppCompatActivity(), LocationListener {
         locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
         // Try to access Location and Contacts
-        updateLocation()
         updateContacts()
+        updateLocation()
 
         // Listeners
         imgCamera.setOnClickListener {

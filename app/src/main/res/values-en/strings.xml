@@ -25,7 +25,6 @@
     <string name="storage_firstname">Firstname</string>
     <string name="storage_birthday">Birthday</string>
     <string name="storage_birthday_default">DD/MM/YYYY</string>
-    <string name="storage_age">Age</string>
 
     <string name="storage_back">Back</string>
 

@@ -25,7 +25,6 @@
     <string name="storage_firstname">Prénom</string>
     <string name="storage_birthday">Date de naissance</string>
     <string name="storage_birthday_default">JJ/MM/AAAA</string>
-    <string name="storage_age">Âge</string>
 
     <string name="storage_back">Retour</string>
 

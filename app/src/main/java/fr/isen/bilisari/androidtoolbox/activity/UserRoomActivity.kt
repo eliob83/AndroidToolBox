@@ -1,6 +1,12 @@
 package fr.isen.bilisari.androidtoolbox.activity
 
+<<<<<<< HEAD
 import android.os.Bundle
+=======
+import android.content.Intent
+import android.os.Bundle
+import android.util.Log
+>>>>>>> origin
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider

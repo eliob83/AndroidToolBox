@@ -1,4 +1,4 @@
-package fr.isen.bilisari.androidtoolbox.misc
+package fr.isen.bilisari.androidtoolbox.database
 
 import com.google.gson.Gson
 import fr.isen.bilisari.androidtoolbox.model.User

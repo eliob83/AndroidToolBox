@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import fr.isen.bilisari.androidtoolbox.misc.Prefs
+import fr.isen.bilisari.androidtoolbox.database.Prefs
 import fr.isen.bilisari.androidtoolbox.R
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -33,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun checkCredentials(username: String, password: String, toasting: Boolean) {
         // Credentials check
-        if (username == "damien" && password == "fontes") {
+        if (username == "admin" && password == "123") {
             // "Session" save
             prefs.setCredentials(username, password)
 

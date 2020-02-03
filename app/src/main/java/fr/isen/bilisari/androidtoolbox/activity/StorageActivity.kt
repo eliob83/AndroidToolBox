@@ -8,23 +8,27 @@ import android.widget.DatePicker
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import fr.isen.bilisari.androidtoolbox.R
+import fr.isen.bilisari.androidtoolbox.database.UserJSON
+import fr.isen.bilisari.androidtoolbox.database.UserRoomDatabase
 import fr.isen.bilisari.androidtoolbox.model.User
-import fr.isen.bilisari.androidtoolbox.misc.UserJSON
 import kotlinx.android.synthetic.main.activity_storage.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
 
 class StorageActivity : AppCompatActivity() {
     private lateinit var json : UserJSON
+    private lateinit var room : UserRoomDatabase
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_storage)
 
-        json =
-            UserJSON(cacheDir.absolutePath)
+        json = UserJSON(cacheDir.absolutePath)
+        room = UserRoomDatabase.getDatabase(this)
 
         // Popup alert
         val builder = AlertDialog.Builder(this@StorageActivity)
@@ -49,13 +53,15 @@ class StorageActivity : AppCompatActivity() {
         // Listeners
         btnValidate.setOnClickListener {
             if (!inputFirstname.text.isNullOrEmpty() && !inputSurname.text.isNullOrEmpty() && inputBirthday.text != resources.getText(R.string.storage_birthday_default)) {
-                json.saveUser(
-                    User(
-                        inputFirstname.text.toString(),
-                        inputSurname.text.toString(),
-                        inputBirthday.text.toString()
-                    )
+                val user = User(
+                    inputFirstname.text.toString(),
+                    inputSurname.text.toString(),
+                    inputBirthday.text.toString()
                 )
+
+                json.saveUser(user)
+                GlobalScope.launch { room.userDao().insert(user) }
+
                 Toast.makeText(this, R.string.storage_form_valid, Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, R.string.storage_form_invalid, Toast.LENGTH_SHORT).show()
@@ -67,6 +73,10 @@ class StorageActivity : AppCompatActivity() {
         }
 
         btnDelete.setOnClickListener {
+            GlobalScope.launch {
+                room.userDao().deleteAll()
+            }
+
             Toast.makeText(this, resources.getText(if (json.deleteUser()) R.string.storage_delete_done else R.string.storage_delete_error), Toast.LENGTH_SHORT).show()
         }
 

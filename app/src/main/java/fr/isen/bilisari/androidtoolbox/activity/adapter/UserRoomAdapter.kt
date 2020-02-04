@@ -12,23 +12,23 @@ import kotlinx.android.synthetic.main.user_room_item.view.*
 
 class UserRoomAdapter internal constructor(
     context: Context
-) : RecyclerView.Adapter<UserRoomAdapter.WordViewHolder>() {
+) : RecyclerView.Adapter<UserRoomAdapter.UserRoomViewHolder>() {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var users = emptyList<User>()
 
-    inner class WordViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class UserRoomViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textSurname: TextView = view.textSurname
         val textFirstname: TextView = view.textFirstname
         val textBirthday: TextView = view.textBirthday
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserRoomViewHolder {
         val itemView = inflater.inflate(R.layout.user_room_item, parent, false)
-        return WordViewHolder(itemView)
+        return UserRoomViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: WordViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: UserRoomViewHolder, position: Int) {
         holder.textSurname.text = users[position].surname
         holder.textFirstname.text = users[position].firstname
         holder.textBirthday.text = users[position].birthday

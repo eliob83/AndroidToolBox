@@ -2,5 +2,23 @@
 <resources>
     <color name="colorPrimary">#D4010F</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#D4010F</color>
+
+    <color name="colorLighterDark">#363636</color>
+    <color name="colorDarkerBright">#F5F5F5</color>
+
+    <color name="colorDarkRed">#941919</color>
+    <color name="colorDarkGreen">#199419</color>
+    <color name="colorDarkBlue">#191994</color>
+
+    <array name="listFabStorage">
+        <item>@color/colorDarkGreen</item>
+        <item>@color/colorDarkGreen</item>
+
+        <item>@color/colorDarkBlue</item>
+        <item>@color/colorDarkBlue</item>
+
+        <item>@color/colorDarkRed</item>
+        <item>@color/colorDarkRed</item>
+    </array>
 </resources>

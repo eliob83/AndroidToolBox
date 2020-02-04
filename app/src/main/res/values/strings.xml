@@ -30,17 +30,26 @@
 
     <string name="storage_validate">Valider</string>
     <string name="storage_form_invalid">Champ(s) invalide(s)</string>
-    <string name="storage_form_valid">Utilisateur sauvegardé</string>
+    <string name="storage_form_valid">Utilisateur sauvegardé : %1$s</string>
 
     <string name="storage_read">Lire</string>
     <string name="storage_read_error">Aucune sauvegarde trouvée</string>
 
     <string name="storage_delete">Supprimer</string>
-    <string name="storage_delete_done">Supprimé</string>
+    <string name="storage_delete_done">Supprimé : %1$s</string>
     <string name="storage_delete_error">Suppression impossible</string>
 
     <string name="storage_alert_title">Vos informations</string>
     <string name="storage_alert_message">Nom : %1$s\nPrénom : %2$s\nDate de naissance : %3$s\nÂge : %4$d</string>
+
+    <string name="storage_fab_add_json">Ajouter au JSON</string>
+    <string name="storage_fab_add_room">Ajouter à Room</string>
+    <string name="storage_fab_show_json">Afficher le JSON</string>
+    <string name="storage_fab_show_room">Afficher Room</string>
+    <string name="storage_fab_delete_json">Supprimer le JSON</string>
+    <string name="storage_fab_delete_room">Vider Room</string>
+
+    <string name="user_room_title">Liste Room</string>
 
 
     <string name="permissions_title">Accès aux informations Android</string>

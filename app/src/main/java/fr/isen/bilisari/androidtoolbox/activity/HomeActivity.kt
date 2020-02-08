@@ -34,7 +34,7 @@ class HomeActivity : AppCompatActivity() {
 
         imgWebservices.setOnClickListener {
             //startActivity(Intent(this@HomeActivity, WebservicesActivity::class.java))
-            startActivity(Intent(this@HomeActivity, UserRoomActivity::class.java))
+            startActivity(Intent(this@HomeActivity, EventActivity::class.java))
         }
 
 

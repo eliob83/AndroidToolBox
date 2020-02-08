@@ -73,6 +73,22 @@
     <string name="webservices_user_email_default">firstname.name@example.com</string>
 
 
+    <string name="event_calendar">Calendar</string>
+    <string name="event_add_title">Add an event</string>
+
+    <string name="event_title">Title</string>
+    <string name="event_description">Description</string>
+    <string name="event_location">Location</string>
+    <string name="event_date_start">Start date</string>
+    <string name="event_date_end">End date</string>
+
+    <string name="event_all_day">Entire day</string>
+    <string name="event_busy">Busy</string>
+    <string name="event_free">Free</string>
+
+    <string name="event_add">Add</string>
+
+
     <string name="home_title">Hello</string>
 
     <string name="home_lifecycle">Lifecycle</string>
@@ -91,4 +107,5 @@
     <string name="desc_download_icon">Download done icon</string>
     <string name="desc_camera">Camera icon</string>
     <string name="desc_user_picture">User picture</string>
+    <string name="desc_busy">Wrong direction sign</string>
 </resources>

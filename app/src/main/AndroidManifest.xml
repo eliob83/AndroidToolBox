@@ -17,7 +17,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.UserRoomActivity"></activity>
+        <activity android:name=".activity.EventActivity"></activity>
+        <activity android:name=".activity.AddEventActivity" />
+        <activity android:name=".activity.AddTodoActivity" />
+        <activity android:name=".activity.TodoListActivity" />
+        <activity android:name=".activity.UserRoomActivity" />
         <activity android:name=".activity.WebservicesActivity" />
         <activity android:name=".activity.PermissionsActivity" />
         <activity android:name=".activity.StorageActivity" />

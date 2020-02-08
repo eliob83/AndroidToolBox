@@ -42,11 +42,12 @@
         android:paddingTop="18dp"
         android:paddingRight="18dp"
         android:paddingBottom="18dp"
+        android:tint="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imgLifecycle"
         app:layout_constraintTop_toTopOf="@+id/imgLifecycle"
-        app:srcCompat="@android:drawable/stat_notify_sdcard" />
+        app:srcCompat="@drawable/ic_sd_card_black_24dp" />
 
     <ImageView
         android:id="@+id/imgLifecycle"
@@ -59,13 +60,14 @@
         android:paddingTop="18dp"
         android:paddingRight="18dp"
         android:paddingBottom="18dp"
+        android:tint="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imgBackup"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.39999998"
-        app:srcCompat="@android:drawable/stat_notify_chat" />
+        app:srcCompat="@drawable/ic_chat_bubble_outline_black_24dp" />
 
     <TextView
         android:id="@+id/textLifecycle"
@@ -118,11 +120,12 @@
         android:paddingTop="18dp"
         android:paddingRight="18dp"
         android:paddingBottom="18dp"
+        android:tint="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imgPermissions"
         app:layout_constraintTop_toTopOf="@+id/imgPermissions"
-        app:srcCompat="@android:drawable/stat_sys_download_done" />
+        app:srcCompat="@drawable/ic_file_download_black_24dp" />
 
     <ImageView
         android:id="@+id/imgPermissions"
@@ -132,14 +135,15 @@
         android:layout_marginTop="64dp"
         android:background="#d4010f"
         android:contentDescription="@string/desc_phone_call"
-        android:paddingLeft="20dp"
-        android:paddingTop="20dp"
-        android:paddingRight="20dp"
-        android:paddingBottom="20dp"
+        android:paddingLeft="18dp"
+        android:paddingTop="18dp"
+        android:paddingRight="18dp"
+        android:paddingBottom="18dp"
+        android:tint="@android:color/white"
         app:layout_constraintEnd_toStartOf="@+id/imgWebservices"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textLifecycle"
-        app:srcCompat="@android:drawable/stat_sys_speakerphone" />
+        app:srcCompat="@drawable/ic_volume_up_black_24dp" />
 
     <Button
         android:id="@+id/btnLogout"

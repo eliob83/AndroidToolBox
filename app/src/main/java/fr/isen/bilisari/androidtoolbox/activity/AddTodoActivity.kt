@@ -8,10 +8,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import fr.isen.bilisari.androidtoolbox.R
 import fr.isen.bilisari.androidtoolbox.model.Todo
-<<<<<<< HEAD
 import fr.isen.bilisari.androidtoolbox.service.firebase.TodoFirebase
-=======
->>>>>>> origin
 import kotlinx.android.synthetic.main.activity_add_todo.*
 
 class AddTodoActivity : AppCompatActivity() {
@@ -22,11 +19,7 @@ class AddTodoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_todo)
 
-<<<<<<< HEAD
         database = TodoFirebase.getInstance(this).database
-=======
-        database = FirebaseDatabase.getInstance().reference
->>>>>>> origin
 
         btnAdd.setOnClickListener {
             if (!inputTitle.text.isNullOrEmpty()) {

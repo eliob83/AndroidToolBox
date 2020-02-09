@@ -1,5 +1,3 @@
 package fr.isen.bilisari.androidtoolbox.model
 
-class Todo {
-
-}
+data class Todo(var id: Int, var title: String, var description: String)

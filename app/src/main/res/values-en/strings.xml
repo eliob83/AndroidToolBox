@@ -105,6 +105,14 @@
     <string name="event_add_done">Event added</string>
 
 
+    <string name="todo_add_title">Todo task add</string>
+
+    <string name="todo_title">Task</string>
+    <string name="todo_description">Description</string>
+
+    <string name="todo_add">Add</string>
+
+
     <string name="home_title">Hello</string>
 
     <string name="home_lifecycle">Lifecycle</string>

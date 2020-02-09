@@ -105,6 +105,14 @@
     <string name="event_add_done">Événement ajouté</string>
 
 
+    <string name="todo_add_title">Ajout d\'une tâche</string>
+
+    <string name="todo_title">Tâche</string>
+    <string name="todo_description">Description</string>
+
+    <string name="todo_add">Ajouter</string>
+
+
     <string name="home_title">Bonjour</string>
 
     <string name="home_lifecycle">Cycle de vie</string>
@@ -112,7 +120,7 @@
     <string name="home_permissions">Permissions</string>
     <string name="home_webservices">Webservices</string>
     <string name="home_calendar">Calendrier</string>
-    <string name="home_todo_list">Liste à faire</string>
+    <string name="home_todo_list">Tâches à faire</string>
 
     <string name="home_logout">Déconnexion</string>
     <string name="home_logout_done">Déconnecté</string>

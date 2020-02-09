@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "22616617305",
+    "firebase_url": "https://androidtoolbox-407fb.firebaseio.com",
+    "project_id": "androidtoolbox-407fb",
+    "storage_bucket": "androidtoolbox-407fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22616617305:android:01d3b72883f4276d4f9c48",
+        "android_client_info": {
+          "package_name": "fr.isen.bilisari.androidtoolbox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22616617305-ghelshr8hu414ok4at8dh264ol9tabpv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.isen.bilisari.androidtoolbox",
+            "certificate_hash": "214b59a08d686d75760076ffbc2a5c375872e602"
+          }
+        },
+        {
+          "client_id": "22616617305-lsadiv6jnpmpv2r0ji65on585vefcgri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo2jQ5MEK_IQkTrDyv4Hi-iwuAD_LiIrE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22616617305-lsadiv6jnpmpv2r0ji65on585vefcgri.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

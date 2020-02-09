@@ -1,6 +1,5 @@
 package fr.isen.bilisari.androidtoolbox.activity.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,11 +8,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import fr.isen.bilisari.androidtoolbox.R
+import fr.isen.bilisari.androidtoolbox.activity.WebservicesActivity
 import fr.isen.bilisari.androidtoolbox.misc.RoundTransformation
 import fr.isen.bilisari.androidtoolbox.model.RandomUser
+import kotlinx.android.synthetic.main.activity_todo_list.*
 import kotlinx.android.synthetic.main.item_webservices.view.*
 
-class RandomUserAdapter(private val items : ArrayList<RandomUser>, private val context: Context) : RecyclerView.Adapter<RandomUserAdapter.ViewHolder>() {
+class RandomUserAdapter(private val items : ArrayList<RandomUser>, private val context: WebservicesActivity) : RecyclerView.Adapter<RandomUserAdapter.ViewHolder>() {
 
     // Items count of the view
     override fun getItemCount(): Int {
@@ -41,6 +42,8 @@ class RandomUserAdapter(private val items : ArrayList<RandomUser>, private val c
                 0f
             )
         ).into(holder.imgPhoto)
+
+        context.loadingCircle.visibility = View.GONE
     }
 
 

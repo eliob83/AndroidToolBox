@@ -1,7 +1,5 @@
 package fr.isen.bilisari.androidtoolbox.model
 
-import java.util.*
-
 data class Event(
     var id: Int,
 

@@ -2,9 +2,6 @@ package fr.isen.bilisari.androidtoolbox.service.sharedpreferences
 
 import android.content.Context
 import android.content.SharedPreferences
-import fr.isen.bilisari.androidtoolbox.service.Encryption
-import java.security.PrivateKey
-import java.security.PublicKey
 
 class Prefs(context: Context) {
     // Current SharedPreferences

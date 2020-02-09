@@ -111,6 +111,8 @@
     <string name="todo_description">Description</string>
 
     <string name="todo_add">Ajouter</string>
+    <string name="todo_add_error">Erreur Firebase : ADD</string>
+    <string name="todo_get_error">Erreur Firebase : GET</string>
 
 
     <string name="home_title">Bonjour</string>
@@ -136,4 +138,5 @@
     <string name="desc_busy">Icône sens interdit</string>
     <string name="desc_list">Icône liste</string>
     <string name="desc_calendar">Icône calendrier</string>
+    <string name="desc_bin">Icône poubelle</string>
 </resources>

@@ -18,7 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.CalendarActivity"></activity>
+        <activity android:name=".activity.CalendarActivity" />
         <activity android:name=".activity.AddEventActivity" />
         <activity android:name=".activity.AddTodoActivity" />
         <activity android:name=".activity.TodoListActivity" />

@@ -111,6 +111,8 @@
     <string name="todo_description">Description</string>
 
     <string name="todo_add">Add</string>
+    <string name="todo_add_error">Firebase error: ADD</string>
+    <string name="todo_get_error">Firebase error: GET</string>
 
 
     <string name="home_title">Hello</string>
@@ -136,4 +138,5 @@
     <string name="desc_busy">Wrong direction sign</string>
     <string name="desc_list">List icon</string>
     <string name="desc_calendar">Calendar icon</string>
+    <string name="desc_bin">Bin icon</string>
 </resources>

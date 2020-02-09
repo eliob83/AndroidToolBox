@@ -5,7 +5,6 @@ import fr.isen.bilisari.androidtoolbox.model.User
 import fr.isen.bilisari.androidtoolbox.service.Encryption
 import java.io.File
 import java.io.FileReader
-import java.nio.charset.StandardCharsets
 
 // Path specification is mandatory
 class UserJSON(path: String) {

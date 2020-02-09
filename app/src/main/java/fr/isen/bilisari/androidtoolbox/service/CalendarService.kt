@@ -3,7 +3,6 @@ package fr.isen.bilisari.androidtoolbox.service
 import android.content.Context
 import android.database.Cursor
 import android.provider.CalendarContract
-import android.util.Log
 import fr.isen.bilisari.androidtoolbox.model.Event
 import java.util.*
 import kotlin.collections.ArrayList
@@ -48,7 +47,7 @@ class CalendarService(private val context: Context) {
     fun getInstancesAsEvents() : ArrayList<Event> {
         return getInstancesAsEvents(
             Calendar.getInstance().run {
-                add(Calendar.WEEK_OF_MONTH, +1)
+                add(Calendar.WEEK_OF_MONTH, +2)
                 timeInMillis
             }
         )

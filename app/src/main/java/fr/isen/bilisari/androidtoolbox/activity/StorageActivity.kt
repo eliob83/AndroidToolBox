@@ -79,7 +79,7 @@ class StorageActivity : AppCompatActivity() {
 
 
     private fun saveUser(saveInRoom: Boolean){
-        if (!inputFirstname.text.isNullOrEmpty() && !inputSurname.text.isNullOrEmpty() && inputBirthday.text != resources.getText(R.string.date_default)) {
+        if (!inputFirstname.text.isNullOrEmpty() && !inputSurname.text.isNullOrEmpty() && isDateValid(inputBirthday.text.toString())) {
             val user = User(
                 inputFirstname.text.toString(),
                 inputSurname.text.toString(),
@@ -95,6 +95,22 @@ class StorageActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, resources.getText(R.string.form_invalid), Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun isDateValid(input: String) : Boolean {
+        if (input != resources.getText(R.string.date_default)) {
+            val arr = input.split("/")
+
+            val old = Calendar.getInstance()
+            old.set(arr[2].toInt(), arr[1].toInt()-1, arr[0].toInt(), 0, 0, 0)
+
+            val now = Calendar.getInstance()
+            now.set(now.get(Calendar.YEAR), now.get(Calendar.MONTH), now.get(Calendar.DAY_OF_MONTH), 0, 0, 0)
+
+            return now.timeInMillis > old.timeInMillis
+        }
+
+        return false
     }
 
     private fun loadUser(builder: AlertDialog.Builder) {

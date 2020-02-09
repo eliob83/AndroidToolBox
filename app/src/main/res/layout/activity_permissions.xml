@@ -26,8 +26,7 @@
         android:contentDescription="@string/desc_camera"
         app:layout_constraintStart_toStartOf="@+id/textTitle"
         app:layout_constraintTop_toBottomOf="@+id/textTitle"
-        app:srcCompat="@android:drawable/ic_menu_camera"
-        android:tint="@color/colorAntiBackground" />
+        app:srcCompat="@android:drawable/ic_menu_camera" />
 
     <TextView
         android:id="@+id/textCoords"

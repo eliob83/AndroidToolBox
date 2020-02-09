@@ -72,7 +72,8 @@
             android:id="@+id/inputSurname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/storage_surname" />
+            android:hint="@string/storage_surname"
+            android:inputType="textShortMessage" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -89,7 +90,8 @@
             android:id="@+id/inputFirstname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/storage_firstname" />
+            android:hint="@string/storage_firstname"
+            android:inputType="textShortMessage" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView

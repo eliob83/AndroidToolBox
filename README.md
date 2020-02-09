@@ -1,5 +1,22 @@
 # TD : Développement application Android
 
+## Facultatifs
+
+P3f) Les deux fragments s'alternent grâce à un bouton.
+
+P3g) Le swipe sur deux fragments est possible.
+
+P4h) Les données JSON sont chiffrées, cf. classe Encryption. Les clefs sont stockées dans le SharedPreferences.
+
+P4i) Une sauvegarde des utilisateurs (partie Backup) est possible à l'aide de Room. (cf. StorageActivity)
+
+P5e) La cellule affiche le nom et le numéro du contact.
+
+P5g) Le calendrier est lu sur les 2 semaines qui suivent, aujourd'hui compris. Un écran d'ajout existe, préremplissant les champs d'ajout d'événement afin que l'utilisateur puisse décider de son calendrier de destination.
+
+P6h) Firebase est utilisé afin de sauvegarder les tâches à faire (cf. TodoListActivity). L'ajout, la visualisation et la suppression de ces tâches sont possibles.
+
+
 ## Partie I : Création et configuration du projet
 
 a) Création du projet. Package name: fr.isen.bilisari.androidtoolbox. Langage Kotlin.

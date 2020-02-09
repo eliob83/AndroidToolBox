@@ -8,13 +8,13 @@ import android.widget.DatePicker
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import fr.isen.bilisari.androidtoolbox.R
-import fr.isen.bilisari.androidtoolbox.database.UserJSON
-import fr.isen.bilisari.androidtoolbox.database.UserRoomDatabase
+import fr.isen.bilisari.androidtoolbox.misc.DateMisc
+import fr.isen.bilisari.androidtoolbox.service.json.UserJSON
+import fr.isen.bilisari.androidtoolbox.service.room.UserRoomDatabase
 import fr.isen.bilisari.androidtoolbox.model.User
 import kotlinx.android.synthetic.main.activity_storage.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -27,7 +27,8 @@ class StorageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_storage)
 
-        json = UserJSON(cacheDir.absolutePath)
+        json =
+            UserJSON(cacheDir.absolutePath)
         room = UserRoomDatabase.getDatabase(this)
 
         fab.bringToFront()
@@ -44,7 +45,7 @@ class StorageActivity : AppCompatActivity() {
             cal.set(Calendar.MONTH, month)
             cal.set(Calendar.DAY_OF_MONTH, day)
 
-            updateInputBirthday(cal)
+            inputBirthday.text = DateMisc.dateFormat(cal.timeInMillis)
         }
         // Open date picker on field click
         inputBirthday.setOnClickListener {
@@ -52,7 +53,7 @@ class StorageActivity : AppCompatActivity() {
         }
 
         // FAB Listeners
-        fab.addOnMenuItemClickListener { fab, textView, itemId ->
+        fab.addOnMenuItemClickListener { _, _, itemId ->
             when (itemId) {
                 R.id.storage_fab_add_json -> saveUser(false)
                 R.id.storage_fab_add_room -> saveUser(true)
@@ -78,7 +79,7 @@ class StorageActivity : AppCompatActivity() {
 
 
     private fun saveUser(saveInRoom: Boolean){
-        if (!inputFirstname.text.isNullOrEmpty() && !inputSurname.text.isNullOrEmpty() && inputBirthday.text != resources.getText(R.string.storage_birthday_default)) {
+        if (!inputFirstname.text.isNullOrEmpty() && !inputSurname.text.isNullOrEmpty() && inputBirthday.text != resources.getText(R.string.date_default)) {
             val user = User(
                 inputFirstname.text.toString(),
                 inputSurname.text.toString(),
@@ -92,7 +93,7 @@ class StorageActivity : AppCompatActivity() {
 
             Toast.makeText(this, resources.getString(R.string.storage_form_valid, if (saveInRoom) "Room" else "JSON"), Toast.LENGTH_SHORT).show()
         } else {
-            Toast.makeText(this, resources.getText(R.string.storage_form_invalid), Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, resources.getText(R.string.form_invalid), Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -149,11 +150,5 @@ class StorageActivity : AppCompatActivity() {
                 Toast.LENGTH_SHORT
             ).show()
         }
-    }
-
-
-    // Update birthday field in the form
-    private fun updateInputBirthday(cal: Calendar) {
-        inputBirthday.text = (SimpleDateFormat("dd/MM/yyyy", Locale.FRENCH).format(cal.time))
     }
 }

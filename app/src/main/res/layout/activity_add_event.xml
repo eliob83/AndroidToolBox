@@ -33,7 +33,8 @@
             android:id="@+id/inputTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/event_title" />
+            android:hint="@string/event_title"
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -50,7 +51,8 @@
             android:id="@+id/inputDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/event_description" />
+            android:hint="@string/event_description"
+            android:inputType="textLongMessage" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -67,16 +69,17 @@
             android:id="@+id/inputLocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/event_location" />
+            android:hint="@string/event_location"
+            android:inputType="textPostalAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/inputDateStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/storage_birthday_default"
+        android:text="@string/date_default"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/inputAllDay"
+        app:layout_constraintBottom_toTopOf="@+id/inputTimeStart"
         app:layout_constraintEnd_toStartOf="@+id/inputDateEnd"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,7 +89,7 @@
         android:id="@+id/inputDateEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/storage_birthday_default"
+        android:text="@string/date_default"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -105,7 +108,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputDateStart" />
+        app:layout_constraintTop_toBottomOf="@+id/inputTimeStart" />
 
     <TextView
         android:id="@+id/textDateStart"
@@ -131,6 +134,7 @@
         android:id="@+id/inputBusy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:checked="true"
         android:switchPadding="10dp"
         android:text="@string/event_busy"
         app:layout_constraintBottom_toTopOf="@+id/btnAdd"
@@ -144,11 +148,67 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:background="#d4010f"
+        android:background="@color/colorAccent"
         android:text="@string/event_add"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorTextButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnBack" />
+
+    <TextView
+        android:id="@+id/inputTimeStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="114dp"
+        android:text="@string/time_default"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/btnAdd"
+        app:layout_constraintEnd_toEndOf="@+id/inputDateStart"
+        app:layout_constraintStart_toStartOf="@+id/inputDateStart" />
+
+    <TextView
+        android:id="@+id/inputTimeEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/time_default"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/inputTimeStart"
+        app:layout_constraintEnd_toEndOf="@+id/inputDateEnd"
+        app:layout_constraintStart_toStartOf="@+id/inputDateEnd"
+        app:layout_constraintTop_toTopOf="@+id/inputTimeStart" />
+
+    <TextView
+        android:id="@+id/textTimeStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/event_time_start"
+        app:layout_constraintBottom_toTopOf="@+id/inputTimeStart"
+        app:layout_constraintEnd_toEndOf="@+id/inputTimeStart"
+        app:layout_constraintStart_toStartOf="@+id/inputTimeStart" />
+
+    <TextView
+        android:id="@+id/textTimeEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/event_time_end"
+        app:layout_constraintBottom_toTopOf="@+id/inputTimeEnd"
+        app:layout_constraintEnd_toEndOf="@+id/inputTimeEnd"
+        app:layout_constraintStart_toStartOf="@+id/inputTimeEnd" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/storage_back"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorTextButton"
+        app:layout_constraintBottom_toBottomOf="@+id/btnAdd"
+        app:layout_constraintEnd_toStartOf="@+id/btnAdd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnAdd" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

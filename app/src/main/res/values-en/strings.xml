@@ -3,12 +3,18 @@
     <string name="app_name">Elio B. Toolbox</string>
 
 
+    <string name="date_default">DD/MM/YYYY</string>
+    <string name="time_default">HH:MM</string>
+
+    <string name="form_invalid">Invalid field(s)</string>
+
+
     <string name="login_title">Connection</string>
 
     <string name="login_username">Username</string>
     <string name="login_password">Password</string>
 
-    <string name="login_validate">Validate</string>
+    <string name="login_validate">Log in</string>
     <string name="login_success">Enchanté %1$s</string>
     <string name="login_fail">Bad credentials</string>
 
@@ -24,12 +30,10 @@
     <string name="storage_surname">Name</string>
     <string name="storage_firstname">Firstname</string>
     <string name="storage_birthday">Birthday</string>
-    <string name="storage_birthday_default">DD/MM/YYYY</string>
 
     <string name="storage_back">Back</string>
 
     <string name="storage_validate">Validate</string>
-    <string name="storage_form_invalid">Invalid field(s)</string>
     <string name="storage_form_valid">User saved: %1$s</string>
 
     <string name="storage_read">Read</string>
@@ -58,6 +62,8 @@
     <string name="permissions_dialog_gallery">Gallery</string>
     <string name="permissions_dialog_camera">Camera</string>
 
+    <string name="permissions_contacts_title">Contacts</string>
+
     <string name="permissions_coords">Latitude: %1$f\nLongitude: %2$f</string>
     <string name="permissions_gps_denied">GPS access forbidden</string>
     <string name="permissions_gps_disabled">GPS disabled</string>
@@ -81,12 +87,17 @@
     <string name="event_location">Location</string>
     <string name="event_date_start">Start date</string>
     <string name="event_date_end">End date</string>
+    <string name="event_time_start">Start time</string>
+    <string name="event_time_end">End time</string>
 
     <string name="event_all_day">Entire day</string>
     <string name="event_busy">Busy</string>
     <string name="event_free">Free</string>
 
+    <string name="event_entire_date_start">%1$s, Entire day</string>
+
     <string name="event_add">Add</string>
+    <string name="event_add_done">Event added</string>
 
 
     <string name="home_title">Hello</string>
@@ -95,6 +106,8 @@
     <string name="home_storage">Storage</string>
     <string name="home_permissions">Permissions</string>
     <string name="home_webservices">Webservices</string>
+    <string name="home_calendar">Calendar</string>
+    <string name="home_todo_list">Todo list</string>
 
     <string name="home_logout">Log out</string>
     <string name="home_logout_done">Logged out</string>
@@ -108,4 +121,6 @@
     <string name="desc_camera">Camera icon</string>
     <string name="desc_user_picture">User picture</string>
     <string name="desc_busy">Wrong direction sign</string>
+    <string name="desc_list">List icon</string>
+    <string name="desc_calendar">Calendar icon</string>
 </resources>

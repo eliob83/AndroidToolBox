@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#D4010F</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D4010F</color>
+    <color name="colorPrimary">#7002A6</color>
+    <color name="colorPrimaryDark">#7002A6</color>
+    <color name="colorAccent">#7002A6</color>
+
+    <color name="colorSecondary">#D4010F</color>
 
     <color name="colorLighterDark">#363636</color>
     <color name="colorDarkerBright">#F5F5F5</color>
@@ -11,6 +13,13 @@
     <color name="colorDarkGreen">#199419</color>
     <color name="colorDarkBlue">#191994</color>
 
+    <color name="colorIconTint">#FFFFFF</color>
+    <color name="colorTextButton">#FFFFFF</color>
+
+    <color name="colorAntiBackground">#000000</color>
+
+
+    <!-- Array colors for FAB on StorageActivity -->
     <array name="listFabStorage">
         <item>@color/colorDarkGreen</item>
         <item>@color/colorDarkGreen</item>

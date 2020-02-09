@@ -1,4 +1,4 @@
-package fr.isen.bilisari.androidtoolbox.database
+package fr.isen.bilisari.androidtoolbox.service.room
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import fr.isen.bilisari.androidtoolbox.R
 import fr.isen.bilisari.androidtoolbox.model.User
-import kotlinx.android.synthetic.main.user_room_item.view.*
+import kotlinx.android.synthetic.main.item_room.view.*
 
 class UserRoomAdapter internal constructor(
     context: Context
@@ -24,7 +24,7 @@ class UserRoomAdapter internal constructor(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserRoomViewHolder {
-        val itemView = inflater.inflate(R.layout.user_room_item, parent, false)
+        val itemView = inflater.inflate(R.layout.item_room, parent, false)
         return UserRoomViewHolder(itemView)
     }
 

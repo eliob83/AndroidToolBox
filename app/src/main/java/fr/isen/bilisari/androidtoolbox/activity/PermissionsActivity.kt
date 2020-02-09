@@ -36,6 +36,10 @@ class PermissionsActivity : AppCompatActivity(), LocationListener {
         // Init Location manager
         locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
+
+        // Check for Contacts and Location permissions
+        comboAsk()
+
         // Try to access Location and Contacts
         updateContacts()
         updateLocation()
@@ -220,6 +224,10 @@ class PermissionsActivity : AppCompatActivity(), LocationListener {
     *   PERMISSIONS
     */
 
+    private fun comboAsk() {
+        ActivityCompat.requestPermissions(this, arrayOf(PERMISSION_CONTACTS, PERMISSION_LOCATION), PERMISSION_CODE_COMBO)
+    }
+
     // Ask given permission with related code, or invoke callback function if already granted
     private fun askPermission(permission: String, code: Int, callback: (() -> Unit)?) {
         if (isPermissionNotGranted(this, permission)) {
@@ -241,6 +249,10 @@ class PermissionsActivity : AppCompatActivity(), LocationListener {
                 }
                 PERMISSION_CODE_CONTACTS -> {
                     updateContacts()
+                }
+                PERMISSION_CODE_COMBO -> {
+                    updateContacts()
+                    updateLocation()
                 }
             }
         } else {
@@ -267,6 +279,8 @@ class PermissionsActivity : AppCompatActivity(), LocationListener {
         private const val PERMISSION_CODE_CONTACTS = 22
         private const val PERMISSION_CODE_LOCATION = 33
         private const val PERMISSION_CODE_CAMERA = 44
+
+        private const val PERMISSION_CODE_COMBO = 55
 
         // Permission values
         private const val PERMISSION_STORAGE = Manifest.permission.READ_EXTERNAL_STORAGE

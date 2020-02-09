@@ -6,7 +6,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import fr.isen.bilisari.androidtoolbox.R
 import fr.isen.bilisari.androidtoolbox.activity.adapter.UserRoomAdapter
-import fr.isen.bilisari.androidtoolbox.database.UserRoomDatabase
+import fr.isen.bilisari.androidtoolbox.service.room.UserRoomDatabase
 import fr.isen.bilisari.androidtoolbox.model.User
 import kotlinx.android.synthetic.main.activity_user_room.*
 

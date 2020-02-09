@@ -3,17 +3,23 @@
     <string name="app_name">Elio B. Boîte à outils</string>
 
 
+    <string name="date_default">JJ/MM/AAAA</string>
+    <string name="time_default">HH:MM</string>
+
+    <string name="form_invalid">Champ(s) invalide(s)</string>
+
+
     <string name="login_title">Connexion</string>
 
     <string name="login_username">Identifiant</string>
     <string name="login_password">Mot de passe</string>
 
-    <string name="login_validate">Valider</string>
+    <string name="login_validate">Se connecter</string>
     <string name="login_success">Enchanté %1$s</string>
     <string name="login_fail">Mauvais couple identifiant/mot de passe</string>
 
 
-    <string name="lifecycle_switch">Zé dibar !</string>
+    <string name="lifecycle_switch">Zé tipar !</string>
 
     <string name="fragment_lifecycle">Bienvenue dans le premier fragment</string>
     <string name="fragment_lifecycle_bis">Et voici le second</string>
@@ -24,12 +30,10 @@
     <string name="storage_surname">Nom</string>
     <string name="storage_firstname">Prénom</string>
     <string name="storage_birthday">Date de naissance</string>
-    <string name="storage_birthday_default">JJ/MM/AAAA</string>
 
     <string name="storage_back">Retour</string>
 
     <string name="storage_validate">Valider</string>
-    <string name="storage_form_invalid">Champ(s) invalide(s)</string>
     <string name="storage_form_valid">Utilisateur sauvegardé : %1$s</string>
 
     <string name="storage_read">Lire</string>
@@ -58,6 +62,8 @@
     <string name="permissions_dialog_gallery">Galerie</string>
     <string name="permissions_dialog_camera">Appareil photo</string>
 
+    <string name="permissions_contacts_title">Contacts</string>
+
     <string name="permissions_coords">Latitude : %1$f\nLongitude : %2$f</string>
     <string name="permissions_gps_denied">Accès au GPS interdit</string>
     <string name="permissions_gps_disabled">GPS désactivé</string>
@@ -81,12 +87,17 @@
     <string name="event_location">Emplacement</string>
     <string name="event_date_start">Date de début</string>
     <string name="event_date_end">Date de fin</string>
+    <string name="event_time_start">Heure de début</string>
+    <string name="event_time_end">Heure de fin</string>
 
     <string name="event_all_day">Journée entière</string>
     <string name="event_busy">Occupé</string>
     <string name="event_free">Libre</string>
 
+    <string name="event_entire_date_start">%1$s, Journée entière</string>
+
     <string name="event_add">Ajouter</string>
+    <string name="event_add_done">Événement ajouté</string>
 
 
     <string name="home_title">Bonjour</string>
@@ -95,6 +106,8 @@
     <string name="home_storage">Sauvegarde</string>
     <string name="home_permissions">Permissions</string>
     <string name="home_webservices">Webservices</string>
+    <string name="home_calendar">Calendrier</string>
+    <string name="home_todo_list">Liste à faire</string>
 
     <string name="home_logout">Déconnexion</string>
     <string name="home_logout_done">Déconnecté</string>
@@ -108,4 +121,6 @@
     <string name="desc_camera">Icône d\'appareil photo</string>
     <string name="desc_user_picture">Avatar de l\'utilisateur</string>
     <string name="desc_busy">Icône sens interdit</string>
+    <string name="desc_list">Icône liste</string>
+    <string name="desc_calendar">Icône calendrier</string>
 </resources>

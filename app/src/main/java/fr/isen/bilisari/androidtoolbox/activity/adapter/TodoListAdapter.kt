@@ -22,7 +22,7 @@ class TodoListAdapter internal constructor(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserRoomViewHolder {
-        val itemView = inflater.inflate(R.layout.todo_list_item, parent, false)
+        val itemView = inflater.inflate(R.layout.item_todo_list, parent, false)
         return UserRoomViewHolder(itemView)
     }
 

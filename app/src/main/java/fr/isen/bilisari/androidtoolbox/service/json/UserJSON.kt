@@ -1,4 +1,4 @@
-package fr.isen.bilisari.androidtoolbox.database
+package fr.isen.bilisari.androidtoolbox.service.json
 
 import com.google.gson.Gson
 import fr.isen.bilisari.androidtoolbox.model.User
@@ -19,7 +19,7 @@ class UserJSON(path: String) {
 
 
     // Set filepath of the JSON file to use
-    private fun setFilepath(path: String) : UserJSON {
+    fun setFilepath(path: String) : UserJSON {
         filepath = path + "user.json"
 
         return this

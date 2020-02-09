@@ -1,30 +1,33 @@
 package fr.isen.bilisari.androidtoolbox.activity.adapter
 
-import android.content.Context
-import android.view.LayoutInflater
-import android.view.LayoutInflater.*
+import android.view.LayoutInflater.from
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import fr.isen.bilisari.androidtoolbox.R
+import fr.isen.bilisari.androidtoolbox.activity.CalendarActivity
+import fr.isen.bilisari.androidtoolbox.misc.DateMisc
 import fr.isen.bilisari.androidtoolbox.model.Event
-import kotlinx.android.synthetic.main.event_list_item.view.*
-import org.w3c.dom.Text
+import kotlinx.android.synthetic.main.item_calendar.view.*
 
-class EventAdapter(private val items : ArrayList<Event>, private val context: Context) : RecyclerView.Adapter<EventAdapter.ViewHolder>() {
+class CalendarAdapter(private var items : ArrayList<Event>, private val context: CalendarActivity) : RecyclerView.Adapter<CalendarAdapter.ViewHolder>() {
 
     // Items count of the view
     override fun getItemCount(): Int {
         return items.size
     }
 
+    fun updateItems(items: ArrayList<Event>) {
+        this.items = items
+    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             from(context).inflate(
-                R.layout.event_list_item,
+                R.layout.item_calendar,
                 parent,
                 false
             )
@@ -42,10 +45,17 @@ class EventAdapter(private val items : ArrayList<Event>, private val context: Co
             holder.textBusy.text = context.resources.getText(R.string.event_busy)
         } else {
             holder.imgBusy.setImageResource(R.drawable.ic_do_not_disturb_off_black_24dp)
+            holder.imgBusy.setColorFilter(context.resources.getColor(R.color.colorDarkGreen))
+            holder.textBusy.text = context.resources.getText(R.string.event_free)
         }
 
-        holder.textDateStart.text = items[position].dateStart.toString()
-        holder.textDateEnd.text = if (items[position].allDay) context.resources.getText(R.string.event_all_day) else items[position].dateEnd.toString()
+        if (items[position].allDay) {
+            holder.textDateStart.text = context.resources.getString(R.string.event_entire_date_start, DateMisc.dateFormat(items[position].begin))
+            holder.textDateEnd.text = DateMisc.dateFormat(items[position].end)
+        } else {
+            holder.textDateStart.text = DateMisc.datetimeFormat(items[position].begin)
+            holder.textDateEnd.text = DateMisc.datetimeFormat(items[position].end)
+        }
     }
 
 

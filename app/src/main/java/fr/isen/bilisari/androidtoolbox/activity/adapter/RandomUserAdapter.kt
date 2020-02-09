@@ -11,7 +11,7 @@ import com.squareup.picasso.Picasso
 import fr.isen.bilisari.androidtoolbox.R
 import fr.isen.bilisari.androidtoolbox.misc.RoundTransformation
 import fr.isen.bilisari.androidtoolbox.model.RandomUser
-import kotlinx.android.synthetic.main.user_list_item.view.*
+import kotlinx.android.synthetic.main.item_webservices.view.*
 
 class RandomUserAdapter(private val items : ArrayList<RandomUser>, private val context: Context) : RecyclerView.Adapter<RandomUserAdapter.ViewHolder>() {
 
@@ -24,7 +24,7 @@ class RandomUserAdapter(private val items : ArrayList<RandomUser>, private val c
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             LayoutInflater.from(context).inflate(
-                R.layout.user_list_item,
+                R.layout.item_webservices,
                 parent,
                 false
             )

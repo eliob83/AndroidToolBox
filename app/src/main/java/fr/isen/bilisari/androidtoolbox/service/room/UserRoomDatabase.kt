@@ -1,4 +1,4 @@
-package fr.isen.bilisari.androidtoolbox.database
+package fr.isen.bilisari.androidtoolbox.service.room
 
 import android.content.Context
 import androidx.room.Database
@@ -17,7 +17,8 @@ abstract class UserRoomDatabase : RoomDatabase() {
         private var INSTANCE: UserRoomDatabase? = null
 
         fun getDatabase(context: Context): UserRoomDatabase {
-            val tempInstance = INSTANCE
+            val tempInstance =
+                INSTANCE
             if (tempInstance != null) {
                 return tempInstance
             }

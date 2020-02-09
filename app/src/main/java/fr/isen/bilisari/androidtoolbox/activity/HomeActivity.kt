@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import fr.isen.bilisari.androidtoolbox.R
-import fr.isen.bilisari.androidtoolbox.database.Prefs
+import fr.isen.bilisari.androidtoolbox.service.sharedpreferences.Prefs
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -17,7 +17,8 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        prefs = Prefs(this)
+        prefs =
+            Prefs(this)
 
         // Listeners
         imgLifecycle.setOnClickListener {
@@ -33,8 +34,15 @@ class HomeActivity : AppCompatActivity() {
         }
 
         imgWebservices.setOnClickListener {
-            //startActivity(Intent(this@HomeActivity, WebservicesActivity::class.java))
-            startActivity(Intent(this@HomeActivity, EventActivity::class.java))
+            startActivity(Intent(this@HomeActivity, WebservicesActivity::class.java))
+        }
+
+        imgCalendar.setOnClickListener {
+            startActivity(Intent(this@HomeActivity, CalendarActivity::class.java))
+        }
+
+        imgTodoList.setOnClickListener {
+            startActivity(Intent(this@HomeActivity, TodoListActivity::class.java))
         }
 
 

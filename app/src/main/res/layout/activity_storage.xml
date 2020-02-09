@@ -13,18 +13,18 @@
         android:layout_height="match_parent"
         app:fab_menu="@menu/menu_storage_fab"
 
-        app:fab_fabBackgroundColor="#d4010f"
+        app:fab_fabBackgroundColor="@color/colorAccent"
         app:fab_fabDrawable="@drawable/ic_settings_black_24dp"
-        app:fab_fabDrawableTint="@android:color/white"
+        app:fab_fabDrawableTint="@color/colorIconTint"
         app:fab_fabRotationAngle="45.0"
 
         app:fab_miniFabBackgroundColorList="@array/listFabStorage"
-        app:fab_miniFabDrawableTint="@android:color/white"
+        app:fab_miniFabDrawableTint="@color/colorIconTint"
 
         app:fab_miniFabTextBackground="@color/colorDarkerBright"
         app:fab_miniFabTextColor="@color/colorLighterDark"
 
-        app:fab_miniFabRippleColor="@android:color/white"
+        app:fab_miniFabRippleColor="@color/colorIconTint"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="264dp"
-        android:text="@string/storage_birthday_default"
+        android:text="@string/date_default"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -98,9 +98,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginBottom="20dp"
-        android:background="#d4010f"
+        android:background="@color/colorAccent"
         android:text="@string/storage_back"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorTextButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

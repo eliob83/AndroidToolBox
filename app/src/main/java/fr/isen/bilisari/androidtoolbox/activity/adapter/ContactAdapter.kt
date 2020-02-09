@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import fr.isen.bilisari.androidtoolbox.R
 import fr.isen.bilisari.androidtoolbox.model.Contact
-import kotlinx.android.synthetic.main.contact_list_item.view.*
+import kotlinx.android.synthetic.main.item_contact.view.*
 
 class ContactAdapter(private val items : ArrayList<Contact>, private val context: Context) : RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
 
@@ -21,7 +21,7 @@ class ContactAdapter(private val items : ArrayList<Contact>, private val context
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             LayoutInflater.from(context).inflate(
-                R.layout.contact_list_item,
+                R.layout.item_contact,
                 parent,
                 false
             )

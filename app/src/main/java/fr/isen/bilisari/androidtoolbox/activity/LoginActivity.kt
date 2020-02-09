@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import fr.isen.bilisari.androidtoolbox.database.Prefs
+import fr.isen.bilisari.androidtoolbox.service.sharedpreferences.Prefs
 import fr.isen.bilisari.androidtoolbox.R
 import kotlinx.android.synthetic.main.activity_login.*
 

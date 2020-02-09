@@ -30,11 +30,13 @@
     <string name="storage_surname">Nom</string>
     <string name="storage_firstname">Prénom</string>
     <string name="storage_birthday">Date de naissance</string>
+    <string name="storage_secure">JSON chiffré</string>
 
     <string name="storage_back">Retour</string>
 
     <string name="storage_validate">Valider</string>
     <string name="storage_form_valid">Utilisateur sauvegardé : %1$s</string>
+    <string name="storage_form_valid_secure">Utilisateur chiffré : JSON</string>
 
     <string name="storage_read">Lire</string>
     <string name="storage_read_error">Aucune sauvegarde trouvée</string>
@@ -47,10 +49,13 @@
     <string name="storage_alert_message">Nom : %1$s\nPrénom : %2$s\nDate de naissance : %3$s\nÂge : %4$d</string>
 
     <string name="storage_fab_add_json">Ajouter au JSON</string>
+    <string name="storage_fab_add_json_secure">Chiffrer et ajouter au JSON</string>
     <string name="storage_fab_add_room">Ajouter à Room</string>
     <string name="storage_fab_show_json">Afficher le JSON</string>
+    <string name="storage_fab_show_json_secure">Afficher le JSON chiffré</string>
     <string name="storage_fab_show_room">Afficher Room</string>
     <string name="storage_fab_delete_json">Supprimer le JSON</string>
+    <string name="storage_fab_delete_json_secure">Supprimer le JSON chiffré</string>
     <string name="storage_fab_delete_room">Vider Room</string>
 
     <string name="user_room_title">Liste Room</string>

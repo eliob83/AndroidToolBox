@@ -30,11 +30,13 @@
     <string name="storage_surname">Name</string>
     <string name="storage_firstname">Firstname</string>
     <string name="storage_birthday">Birthday</string>
+    <string name="storage_secure">Encrypted JSON</string>
 
     <string name="storage_back">Back</string>
 
     <string name="storage_validate">Validate</string>
     <string name="storage_form_valid">User saved: %1$s</string>
+    <string name="storage_form_valid_secure">User encrypted: JSON</string>
 
     <string name="storage_read">Read</string>
     <string name="storage_read_error">No save found</string>
@@ -47,10 +49,13 @@
     <string name="storage_alert_message">Name: %1$s\nFirstname: %2$s\nBirthday: %3$s\nAge: %4$d</string>
 
     <string name="storage_fab_add_json">Add to JSON</string>
+    <string name="storage_fab_add_json_secure">Encrypt and add to JSON</string>
     <string name="storage_fab_add_room">Add to Room</string>
     <string name="storage_fab_show_json">Show JSON</string>
+    <string name="storage_fab_show_json_secure">Show encrypted JSON</string>
     <string name="storage_fab_show_room">Show Room</string>
     <string name="storage_fab_delete_json">Delete JSON</string>
+    <string name="storage_fab_delete_json_secure">Delete encrypted JSON</string>
     <string name="storage_fab_delete_room">Wipe Room</string>
 
     <string name="user_room_title">Room List</string>

@@ -9,9 +9,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import fr.isen.bilisari.androidtoolbox.R
 import fr.isen.bilisari.androidtoolbox.misc.DateMisc
+import fr.isen.bilisari.androidtoolbox.model.User
+import fr.isen.bilisari.androidtoolbox.service.Encryption
 import fr.isen.bilisari.androidtoolbox.service.json.UserJSON
 import fr.isen.bilisari.androidtoolbox.service.room.UserRoomDatabase
-import fr.isen.bilisari.androidtoolbox.model.User
+import fr.isen.bilisari.androidtoolbox.service.sharedpreferences.Prefs
 import kotlinx.android.synthetic.main.activity_storage.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -21,15 +23,16 @@ import java.util.*
 class StorageActivity : AppCompatActivity() {
     private lateinit var json : UserJSON
     private lateinit var room : UserRoomDatabase
+    private lateinit var prefs: Prefs
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_storage)
 
-        json =
-            UserJSON(cacheDir.absolutePath)
+        json = UserJSON(cacheDir.absolutePath)
         room = UserRoomDatabase.getDatabase(this)
+        prefs = Prefs(this)
 
         fab.bringToFront()
 
@@ -58,7 +61,7 @@ class StorageActivity : AppCompatActivity() {
                 R.id.storage_fab_add_json -> saveUser(false)
                 R.id.storage_fab_add_room -> saveUser(true)
                 R.id.storage_fab_delete_json ->
-                    Toast.makeText(this, resources.getString(if (json.deleteUser()) R.string.storage_delete_done else R.string.storage_delete_error, "JSON"), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, resources.getString(if (json.deleteUser(switchSecure.isChecked)) R.string.storage_delete_done else R.string.storage_delete_error, "JSON"), Toast.LENGTH_SHORT).show()
                 R.id.storage_fab_delete_room -> {
                     GlobalScope.launch { room.userDao().deleteAll() }
                     Toast.makeText(
@@ -75,6 +78,20 @@ class StorageActivity : AppCompatActivity() {
         btnBack.setOnClickListener {
             startActivity(Intent(this@StorageActivity, HomeActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
         }
+
+        switchSecure.setOnClickListener {
+            if (switchSecure.isChecked) {
+                fab.getMiniFab(0).setImageResource(R.drawable.ic_security_black_24dp)
+                fab.getMiniFabTextView(0).text = resources.getText(R.string.storage_fab_add_json_secure)
+                fab.getMiniFabTextView(2).text = resources.getText(R.string.storage_fab_show_json_secure)
+                fab.getMiniFabTextView(4).text = resources.getText(R.string.storage_fab_delete_json_secure)
+            } else {
+                fab.getMiniFab(0).setImageResource(R.drawable.ic_person_add_black_24dp)
+                fab.getMiniFabTextView(0).text = resources.getText(R.string.storage_fab_add_json)
+                fab.getMiniFabTextView(2).text = resources.getText(R.string.storage_fab_show_json)
+                fab.getMiniFabTextView(4).text = resources.getText(R.string.storage_fab_delete_json)
+            }
+        }
     }
 
 
@@ -88,8 +105,17 @@ class StorageActivity : AppCompatActivity() {
 
             if (saveInRoom)
                 GlobalScope.launch { room.userDao().insert(user) }
-            else
-                json.saveUser(user)
+            else {
+                if (switchSecure.isChecked) {
+                    prefs.setKeys(Encryption.generateKeyPair())
+                    json.encodedSave(user, prefs.publicKey)
+
+                    Toast.makeText(this, resources.getText(R.string.storage_form_valid_secure), Toast.LENGTH_SHORT).show()
+                    return
+                } else {
+                    json.saveUser(user)
+                }
+            }
 
             Toast.makeText(this, resources.getString(R.string.storage_form_valid, if (saveInRoom) "Room" else "JSON"), Toast.LENGTH_SHORT).show()
         } else {
@@ -115,9 +141,9 @@ class StorageActivity : AppCompatActivity() {
 
     private fun loadUser(builder: AlertDialog.Builder) {
         // File check
-        if (json.exists()) {
+        if (json.exists(switchSecure.isChecked)) {
             // Load user previously saved
-            val user = json.loadUser()
+            val user = if (switchSecure.isChecked) json.encodedLoad(prefs.privateKey) else json.loadUser()
 
             // Age calculation
             val arrBirthday = user.birthday.split("/")

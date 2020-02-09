@@ -2,8 +2,10 @@ package fr.isen.bilisari.androidtoolbox.service.json
 
 import com.google.gson.Gson
 import fr.isen.bilisari.androidtoolbox.model.User
+import fr.isen.bilisari.androidtoolbox.service.Encryption
 import java.io.File
 import java.io.FileReader
+import java.nio.charset.StandardCharsets
 
 // Path specification is mandatory
 class UserJSON(path: String) {
@@ -11,6 +13,7 @@ class UserJSON(path: String) {
 
     // Path to JSON file to handle
     private var filepath: String = ""
+    private var filepathEncoded: String = ""
 
 
     init {
@@ -21,10 +24,21 @@ class UserJSON(path: String) {
     // Set filepath of the JSON file to use
     fun setFilepath(path: String) : UserJSON {
         filepath = path + "user.json"
+        filepathEncoded = path + "user_encoded.json"
 
         return this
     }
 
+
+    fun encodedLoad(privateKey: String) : User {
+        return gson.fromJson(Encryption.decrypt(FileReader(filepathEncoded).readText(), privateKey), User::class.java)
+    }
+
+    fun encodedSave(user: User, publicKey: String) : UserJSON {
+        File(filepathEncoded).writeText(Encryption.encrypt(gson.toJson(user), publicKey))
+
+        return this
+    }
 
 
     // Save current user as JSON
@@ -40,12 +54,12 @@ class UserJSON(path: String) {
     }
 
     // Remove JSON
-    fun deleteUser() : Boolean {
-        return File(filepath).delete()
+    fun deleteUser(encoded: Boolean) : Boolean {
+        return File(if (encoded) filepathEncoded else filepath).delete()
     }
 
     // Does the file exist
-    fun exists() : Boolean {
-        return File(filepath).exists()
+    fun exists(encoded: Boolean) : Boolean {
+        return File(if (encoded) filepathEncoded else filepath).exists()
     }
 }

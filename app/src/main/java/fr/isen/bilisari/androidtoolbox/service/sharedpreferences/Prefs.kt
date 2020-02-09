@@ -2,6 +2,9 @@ package fr.isen.bilisari.androidtoolbox.service.sharedpreferences
 
 import android.content.Context
 import android.content.SharedPreferences
+import fr.isen.bilisari.androidtoolbox.service.Encryption
+import java.security.PrivateKey
+import java.security.PublicKey
 
 class Prefs(context: Context) {
     // Current SharedPreferences
@@ -33,6 +36,23 @@ class Prefs(context: Context) {
     }
 
 
+    var publicKey: String
+        get() = prefs.getString(fieldPublicKey, "").orEmpty()
+        set(value) = prefs.edit().putString(fieldPublicKey, value).apply()
+
+    var privateKey: String
+        get() = prefs.getString(fieldPrivateKey, "").orEmpty()
+        set(value) = prefs.edit().putString(fieldPrivateKey, value).apply()
+
+
+    // Setter shortcut
+    fun setKeys(keys: Pair<String, String>) {
+        publicKey = keys.first
+        privateKey = keys.second
+    }
+
+
+
     companion object {
         // Filename of SharedPreferences to use
         private const val filename = "fr.isen.bilisari.androidtoolbox.prefs"
@@ -40,5 +60,8 @@ class Prefs(context: Context) {
         // Field names in the SharedPreferences
         private const val fieldUsername = "user.username"
         private const val fieldPassword = "user.password"
+
+        private const val fieldPublicKey = "key.public"
+        private const val fieldPrivateKey = "key.private"
     }
 }
